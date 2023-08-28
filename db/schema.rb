@@ -10,9 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_141847) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_28_145139) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_topic_id", null: false
+    t.bigint "topic_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_messages_on_topic_id"
+    t.index ["user_topic_id"], name: "index_messages_on_user_topic_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.integer "rating"
+    t.boolean "red_flag"
+    t.bigint "reviewer_id"
+    t.bigint "reviewee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reviewee_id"], name: "index_reviews_on_reviewee_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.bigint "theme_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["theme_id"], name: "index_topics_on_theme_id"
+    t.index ["user_id"], name: "index_topics_on_user_id"
+  end
+
+  create_table "user_topics", force: :cascade do |t|
+    t.boolean "status"
+    t.bigint "user_id", null: false
+    t.bigint "topic_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_user_topics_on_topic_id"
+    t.index ["user_id"], name: "index_user_topics_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +71,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_141847) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "messages", "topics"
+  add_foreign_key "messages", "user_topics"
+  add_foreign_key "reviews", "user_topics", column: "reviewee_id"
+  add_foreign_key "reviews", "user_topics", column: "reviewer_id"
+  add_foreign_key "topics", "themes"
+  add_foreign_key "topics", "users"
+  add_foreign_key "user_topics", "topics"
+  add_foreign_key "user_topics", "users"
 end
