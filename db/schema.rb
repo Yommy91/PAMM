@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_145139) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_124613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_145139) do
     t.bigint "reviewee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "global_rating"
+    t.integer "quality"
+    t.integer "expertise"
+    t.integer "behavior"
     t.index ["reviewee_id"], name: "index_reviews_on_reviewee_id"
     t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end
@@ -49,8 +53,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_145139) do
     t.bigint "theme_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "global_rating"
+    t.integer "quality"
+    t.integer "expertise"
+    t.integer "behavior"
     t.index ["theme_id"], name: "index_topics_on_theme_id"
     t.index ["user_id"], name: "index_topics_on_user_id"
+  end
+
+  create_table "user_themes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "theme_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["theme_id"], name: "index_user_themes_on_theme_id"
+    t.index ["user_id"], name: "index_user_themes_on_user_id"
   end
 
   create_table "user_topics", force: :cascade do |t|
@@ -82,6 +99,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_145139) do
   add_foreign_key "reviews", "user_topics", column: "reviewer_id"
   add_foreign_key "topics", "themes"
   add_foreign_key "topics", "users"
+  add_foreign_key "user_themes", "themes"
+  add_foreign_key "user_themes", "users"
   add_foreign_key "user_topics", "topics"
   add_foreign_key "user_topics", "users"
 end
