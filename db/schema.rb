@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_104915) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_124613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_104915) do
     t.bigint "reviewee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "global_rating"
+    t.integer "quality"
+    t.integer "expertise"
+    t.integer "behavior"
     t.index ["reviewee_id"], name: "index_reviews_on_reviewee_id"
     t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end
@@ -49,6 +53,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_104915) do
     t.bigint "theme_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "global_rating"
+    t.integer "quality"
+    t.integer "expertise"
+    t.integer "behavior"
     t.index ["theme_id"], name: "index_topics_on_theme_id"
     t.index ["user_id"], name: "index_topics_on_user_id"
   end
