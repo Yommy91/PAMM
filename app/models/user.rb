@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   has_many :topics
   has_many :user_topics
+  has_many :user_themes
+  has_many :themes, through: :user_themes
 
 end
