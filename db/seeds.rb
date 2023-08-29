@@ -197,79 +197,102 @@ user39 = User.create(email: "user39@example.com", password: "password", username
 user40 = User.create(email: "user40@example.com", password: "password", username: "grizeman")
 
 puts "Creating topics..."
-topic1 = Topic.create(name: "Artificial Intelligence", description: "Discussion about AI advancements.", user: user1, theme: theme1)
-topic2 = Topic.create(name: "Space Exploration", description: "Exploring the cosmos.", user: user2, theme: theme2)
-topic3 = Topic.create(name: "Abstract Painting", description: "Expressing emotions through art.", user: user3, theme: theme3)
-topic4 = Topic.create(name: "Artificial Intelligence", description: "Discussion about non AI advancements.", user: user4, theme: theme4)
-topic5 = Topic.create(name: "Space Exploration", description: "Exploring the cosmos.", user: user5, theme: theme5)
-topic6 = Topic.create(name: "Abstract Painting", description: "Expressing emotions through art.", user: user6, theme: theme6)
-topic7 = Topic.create(name: "Artificial Intelligence", description: "Discussion about AI advancements.", user: user7, theme: theme7)
-topic8 = Topic.create(name: "Space Exploration", description: "Exploring the cosmos.", user: user8, theme: theme8)
-topic9 = Topic.create(name: "Abstract Painting", description: "Expressing emotions through art.", user: user9, theme: theme9)
+
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic1 = Topic.create(
+  name: "Kylian Mbappe performance.",
+  description: "Amazing performance of Kylian Mbappe against Lens.",
+  user: User.find_by(email: "user1@example.com"),
+  theme: Theme.find_by(name: "Football"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic2 = Topic.create(
+  name: "Rugby world cup favourites",
+  description: "France is the favourite for the next world cup.",
+  user: User.find_by(email: "user2@example.com"),
+  theme: Theme.find_by(name: "Rugby"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+
+)
+
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic3 = Topic.create(
+  name: "Novak Djokovic is the best tennis player of all time",
+  description: "Djokovic will win the next Championship.",
+  user: User.find_by(email: "user3@example.com"),
+  theme: Theme.find_by(name: "Tennis"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
 
 puts "Creating user topics..."
 user_topic1 = UserTopic.create!(user: User.first, topic: Topic.first, status: true)
 user_topic2 = UserTopic.create!(user: User.second, topic: Topic.second, status: true)
 user_topic3 = UserTopic.create!(user: User.third, topic: Topic.third, status: true)
-user_topic4 = UserTopic.create!(user: User.fourth, topic: Topic.fourth, status: true)
-user_topic5 = UserTopic.create!(user: User.fifth, topic: Topic.fifth, status: true)
-user_topic6 = UserTopic.create!(user: User.sixth, topic: Topic.sixth, status: true)
-user_topic7 = UserTopic.create!(user: User.seventh, topic: Topic.seventh, status: true)
-user_topic8 = UserTopic.create!(user: User.eighth, topic: Topic.eighth, status: true)
-user_topic9 = UserTopic.create!(user: User.ninth, topic: Topic.ninth, status: true)
-user_topic10 = UserTopic.create!(user: User.tenth, topic: Topic.tenth, status: true)
-user_topic11 = UserTopic.create!(user: User.eleventh, topic: Topic.eleventh, status: true)
-user_topic12 = UserTopic.create!(user: User.twelfth, topic: Topic.twelfth, status: true)
-user_topic13 = UserTopic.create!(user: User.thirteenth, topic: Topic.thirteenth, status: true)
-user_topic14 = UserTopic.create!(user: User.fourteenth, topic: Topic.fourteenth, status: true)
-user_topic15 = UserTopic.create!(user: User.fifteenth, topic: Topic.fifteenth, status: true)
-user_topic16 = UserTopic.create!(user: User.sixteenth, topic: Topic.sixteenth, status: true)
-user_topic17 = UserTopic.create!(user: User.seventeenth, topic: Topic.seventeenth, status: true)
-user_topic18 = UserTopic.create!(user: User.eighteenth, topic: Topic.eighteenth, status: true)
-user_topic19 = UserTopic.create!(user: User.nineteenth, topic: Topic.nineteenth, status: true)
-user_topic20 = UserTopic.create!(user: User.twentieth, topic: Topic.twentieth, status: true)
-user_topic21 = UserTopic.create!(user: User.twenty_first, topic: Topic.twenty_first, status: true)
-user_topic22 = UserTopic.create!(user: User.twenty_second, topic: Topic.twenty_second, status: true)
-user_topic23 = UserTopic.create!(user: User.twenty_third, topic: Topic.twenty_third, status: true)
-user_topic24 = UserTopic.create!(user: User.twenty_fourth, topic: Topic.twenty_fourth, status: true)
-user_topic25 = UserTopic.create!(user: User.twenty_fifth, topic: Topic.twenty_fifth, status: true)
-user_topic26 = UserTopic.create!(user: User.twenty_sixth, topic: Topic.twenty_sixth, status: true)
-user_topic27 = UserTopic.create!(user: User.twenty_seventh, topic: Topic.twenty_seventh, status: true)
-user_topic28 = UserTopic.create!(user: User.twenty_eighth, topic: Topic.twenty_eighth, status: true)
-user_topic29 = UserTopic.create!(user: User.twenty_ninth, topic: Topic.twenty_ninth, status: true)
-user_topic30 = UserTopic.create!(user: User.thirtieth, topic: Topic.thirtieth, status: true)
-user_topic31 = UserTopic.create!(user: User.thirty_first, topic: Topic.thirty_first, status: true)
-user_topic32 = UserTopic.create!(user: User.thirty_second, topic: Topic.thirty_second, status: true)
-user_topic33 = UserTopic.create!(user: User.thirty_third, topic: Topic.thirty_third, status: true)
-user_topic34 = UserTopic.create!(user: User.thirty_fourth, topic: Topic.thirty_fourth, status: true)
-user_topic35 = UserTopic.create!(user: User.thirty_fifth, topic: Topic.thirty_fifth, status: true)
-user_topic36 = UserTopic.create!(user: User.thirty_sixth, topic: Topic.thirty_sixth, status: true)
-user_topic37 = UserTopic.create!(user: User.thirty_seventh, topic: Topic.thirty_seventh, status: true)
-user_topic38 = UserTopic.create!(user: User.thirty_eighth, topic: Topic.thirty_eighth, status: true)
-user_topic39 = UserTopic.create!(user: User.thirty_ninth, topic: Topic.thirty_ninth, status: true)
-user_topic40 = UserTopic.create!(user: User.fortieth, topic: Topic.fortieth, status: true)
-user_topic41 = UserTopic.create!(user: User.forty_first, topic: Topic.forty_first, status: true)
-user_topic42 = UserTopic.create!(user: User.forty_second, topic: Topic.forty_second, status: true)
-user_topic43 = UserTopic.create!(user: User.forty_third, topic: Topic.forty_third, status: true)
-user_topic44 = UserTopic.create!(user: User.forty_fourth, topic: Topic.forty_fourth, status: true)
-user_topic45 = UserTopic.create!(user: User.forty_fifth, topic: Topic.forty_fifth, status: true)
-user_topic46 = UserTopic.create!(user: User.forty_sixth, topic: Topic.forty_sixth, status: true)
-user_topic47 = UserTopic.create!(user: User.forty_seventh, topic: Topic.forty_seventh, status: true)
-user_topic48 = UserTopic.create!(user: User.forty_eighth, topic: Topic.forty_eighth, status: true)
-user_topic49 = UserTopic.create!(user: User.forty_ninth, topic: Topic.forty_ninth, status: true)
-user_topic50 = UserTopic.create!(user: User.fiftieth, topic: Topic.fiftieth, status: true)
-user_topic51 = UserTopic.create!(user: User.fifty_first, topic: Topic.fifty_first, status: true)
-user_topic52 = UserTopic.create!(user: User.fifty_second, topic: Topic.fifty_second, status: true)
-user_topic53 = UserTopic.create!(user: User.fifty_third, topic: Topic.fifty_third, status: true)
+
 
 puts "Creating messages..."
 message1 = Message.create(content: "Exciting developments in AI recently!", user_topic: user_topic1, topic: topic1)
-message2 = Message.create(content: "Have you heard about the latest Mars mission?", user_topic: user_topic2, topic: topic2)
-message3 = Message.create(content: "I love using bold colors in my paintings.", user_topic: user_topic3, topic: topic3)
+message2 = Message.create(content: "I agree! I'm excited to see what the future holds.", user_topic: user_topic2, topic: topic2)
+message3 = Message.create(content: "Have you heard about the latest Mars mission?", user_topic: user_topic3, topic: topic3)
 
 puts "Creating reviews..."
-review1 = Review.create(content: "Great contributor!", rating: 5, red_flag: false, reviewer: UserTopic.first, reviewee: UserTopic.second)
-review2 = Review.create(content: "Insightful discussions.", rating: 4, red_flag: false, reviewer: UserTopic.second, reviewee: UserTopic.first)
-review3 = Review.create(content: "Very knowledgeable about the topic.", rating: 5, red_flag: false, reviewer: UserTopic.third, reviewee: UserTopic.second)
+review1 = Review.create(
+  content: "Great contributor!",
+  rating: 5,
+  red_flag: false,
+  reviewer: UserTopic.first,
+  reviewee: UserTopic.second,
+  global_rating: 4,
+  quality: 5,
+  expertise: 4,
+  behavior: 5
+)
+
+review2 = Review.create(
+  content: "Insightful discussions.",
+  rating: 4,
+  red_flag: false,
+  reviewer: UserTopic.second,
+  reviewee: UserTopic.first,
+  global_rating: 4,
+  quality: 4,
+  expertise: 3,
+  behavior: 4
+)
+
+review3 = Review.create(
+  content: "Very knowledgeable about the topic.",
+  rating: 5,
+  red_flag: false,
+  reviewer: UserTopic.third,
+  reviewee: UserTopic.first,
+  global_rating: 5,
+  quality: 5,
+  expertise: 5,
+  behavior: 4
+)
 
 puts "Finished seeding."
