@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="text-center col-12">
+      <% @topics.each do |topic| %>
+        <div class="topics-index-item">
+          <%= link_to topic do %>
+            <div class="topics-index-item-name">
+              <%= topic.name %>
+            </div>
+            <div class="topics-index-item-description">
+              <%= topic.description %>
+            </div>
+            <div class="topics-index-expertise">
+              <%= topic.expertise %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

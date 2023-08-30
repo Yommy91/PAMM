@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="text-center col-12">
+      <%# <div>
+        <input type="checkbox" id="Skip">
+        <label for="Skip">Skip</label>
+      </div> %>
+      <div>
+        <h1 class="justify-center text-white">Choose 5 themes</h1>
+        <h1 class="justify-center text-white">you enjoy talking about</h2>
+      </div>
+      <%= simple_form_for current_user, html: { data: { controller: 'themes' }} do |f| %>
+      <div class="col">
+        <%= f.association :themes,
+        as: :check_boxes,
+        include_blank: false,
+        include_hidden: false,
+        input_html: {
+          class: "theme-selector",
+          data: {
+            themes_target: 'checkbox',
+            action: 'change->themes#shoot'
+          }
+        },
+        item_wrapper_class: "theme-item" %>
+      </div>
+        <div class="text-center">
+        <%= f.button :submit, " Update", class: "btn-lg btn-primary rounded-5 button"  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
