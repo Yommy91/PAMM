@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :themes, only: [] do
+  # We define themes where users choose 5 themes and confirm with a button
+  resources :themes, only: [:index] do
     resources :topics, only: [:index]
   end
   resources :topics, only: [] do
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
   resources :user_topics, only: [:update] do
     resources :reviews, only: [:new, :create]
   end
+  resources :users, only: [:update]
 end
