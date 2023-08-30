@@ -102,7 +102,7 @@ expertise = rand(1..5)
 behavior = rand(1..5)
 global_rating = [quality, expertise, behavior].sum / 3
 
-topic1 = Topic.create(
+topic1 = Topic.create!(
   name: "Kylian Mbappe performance.",
   description: "Amazing performance of Kylian Mbappe against Lens.",
   user: User.find_by(email: "user1@example.com"),
@@ -118,7 +118,7 @@ expertise = rand(1..5)
 behavior = rand(1..5)
 global_rating = [quality, expertise, behavior].sum / 3
 
-topic2 = Topic.create(
+topic2 = Topic.create!(
   name: "Rugby world cup favourites",
   description: "France is the favourite for the next world cup.",
   user: User.find_by(email: "user2@example.com"),
@@ -135,7 +135,7 @@ expertise = rand(1..5)
 behavior = rand(1..5)
 global_rating = [quality, expertise, behavior].sum / 3
 
-topic3 = Topic.create(
+topic3 = Topic.create!(
   name: "Novak Djokovic is the best tennis player of all time",
   description: "Djokovic will win the next Championship.",
   user: User.find_by(email: "user3@example.com"),
