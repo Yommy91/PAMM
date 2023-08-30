@@ -1,3 +1,7 @@
+<div class="container">
+  <div class="row">
+
+      <div class="form-login">
 <h2>Resend unlock instructions</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
@@ -8,7 +12,7 @@
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" } %>
+                input_html: { autocomplete: "email" }, placeholder:"user@exemple.com" %>
   </div>
 
   <div class="form-actions">
@@ -17,3 +21,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+      </div>
+    </div>
+
+</div>
