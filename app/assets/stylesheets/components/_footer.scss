@@ -1,0 +1,41 @@
+$footer-bg-color: #f3e4e4;
+$icon-bg-color: #FFBB5C;
+$icon-hover-bg-color: #211b1b;
+$icon-color: #211b1b;
+$icon-hover-color: #d6a350;
+
+.footer {
+  background-color: $footer-bg-color;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+
+    li {
+      a {
+        display: inline-block;
+        padding: 10px;
+        background-color: $icon-bg-color;
+        border-radius: 50%;
+        color: $icon-color;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover {
+          background-color: $icon-hover-bg-color;
+          color: $icon-hover-color;
+        }
+
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
