@@ -3,8 +3,6 @@ class TopicsController < ApplicationController
     @topics = Topic.all
   end
 
-
-
   def new
     @topic = Topic.new
   end
@@ -24,7 +22,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @user_topic = UserTopic.new(topic: @topic, user: current_user)
     @themes = Theme.all
-     @message = Message.new
+    @message = Message.new
   end
 
   def destroy
