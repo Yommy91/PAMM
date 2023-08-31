@@ -12,8 +12,8 @@
         <% end %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light rounded-5" data-bs-dismiss="modal">back</button>
-        <button type="button" class="btn btn-outline-light rounded-5" data-bs-dismiss="modal">Join Chat</button>
+        <%= link_to  "Back", topics_path, class: "btn btn-outline-light rounded-5" %>
+        <%= link_to  "Join chat", topic_path(topic), class: "btn btn-outline-light rounded-5" %>
       </div>
     </div>
   </div>
