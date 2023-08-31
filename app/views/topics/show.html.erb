@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>TOPIC <%= @topic.id %> SHOW</h1>
+
+  <p><%= @topic.description %></p>
+  <p>Expertise:<% @topic.expertise.times do %>
+    <i class="fa-solid fa-star modal-color"></i>
+  <% end %></p>
+
+  <br><br>
+
+  <div class="reviews-section">
+    <% @topic.reviews.each do |review| %>
+      <div>
+        <%# <%= image_tag("avatars/#{review.user.avatar}", class: 'ms-1 avatar-large', alt: 'avatar') %>
+
+        <% review.rating.times do  %>
+          <i class="fa-solid fa-star" style="color: black;"></i>
+        <% end %>
+        <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+        <p><%= review.content %></p>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+  <h3 class="text-center">Add a Review</h3>
+  <%= link_to "Add review", new_user_topic_review_path(@reviewee_user_topic) %>
+</div>
