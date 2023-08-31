@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="text-center col-12">
+      <% @topics.each do |topic| %>
+        <div class="col-12" >
+          <div class="card-topic">
+            <%#= link_to topic , class: 'text-decoration-none'do %>
+              <% avatar = ["avatar-1.png", "avatar-2.png","avatar-3.png","avatar-4.png",
+              "avatar-5.png","avatar-6.png","avatar-7.png","avatar-8.png", "avatar-9.png","avatar-10.png"] %>
+              <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
+              <div class="card-topic-info">
+                <div class="card-topic-info-name">
+                  <h4><strong><%= topic.name %></strong></h4>
+                </div><hr>
+                <div class="card-topic-info-description">
+                  <p><%= topic.description %></p>
+                </div><hr>
+                <div class="card-topic-info-expertise">
+                  <p>Expertise:<% topic.expertise.times do %>
+                    <i class="fa-solid fa-star" style="color: black;"></i>
+                  <% end %></p>
+                </div>
+              </div>
+            <%# end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
