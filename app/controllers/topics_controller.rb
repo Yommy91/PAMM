@@ -24,6 +24,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @user_topic = UserTopic.new(topic: @topic, user: current_user)
     @themes = Theme.all
+     @message = Message.new
   end
 
   def destroy
