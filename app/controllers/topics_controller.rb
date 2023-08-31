@@ -4,10 +4,11 @@ class TopicsController < ApplicationController
   end
 
   def show
-
+    @topic = Topic.find(params[:id])
+    @message = Message.new
   end
 
   def destroy
-    
+
   end
 end
