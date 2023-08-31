@@ -20,9 +20,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @user_topic = UserTopic.new(topic: @topic, user: current_user)
-    @themes = Theme.all
-    @message = Message.new
+    @reviewee_user_topic = @topic.user_topics.where.not(user_id: current_user.id).first
   end
 
   def destroy
