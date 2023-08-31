@@ -21,6 +21,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @reviewee_user_topic = @topic.user_topics.where.not(user_id: current_user.id).first
+    @message = Message.new
   end
 
   def destroy
