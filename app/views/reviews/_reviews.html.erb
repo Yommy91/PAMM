@@ -1,0 +1,82 @@
+<div class="my-5">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="text-center">Add a Review</h3>
+      <hr>
+      <% if @reviews.user_topic_review(current_user, @topic).empty? %>
+      <small class="text-center"><em class="text-muted">Be the first to review this topic!</em></small>
+      <% end %>
+
+      <% @reviews.user_topic_reviwe(current_user, @topic).each do |review| %>
+        <div>
+          <%# <%= image_tag("avatars/#{review.user.avatar}", class: 'ms-1 avatar-large', alt: 'avatar') %>
+
+          <% review.rating.times do  %>
+            <i class="fa-solid fa-star" style="color: black;"></i>
+          <% end %>
+            <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+            <p><%= review.content %></p>
+        </div>
+        <hr>
+      <% end %>
+      <div class="col-12">
+        <div class="bg-white rounded py-3">
+          <h4>
+            Leave a Review
+          </h4>
+
+          <%= simple_form_for [@user_topic_review, Review.new] do |f| %>
+
+            <%= f.input :content, label: false, placeholder: "What did you think of this topic?", input_html: { rows: 4 } %>
+            <%= f.input :rating, as: :select, collection: (1..5), required :false, label: false, placeholder: "How would you rate this topic?", input_html: { data: { controller: "star-rating" } } %>
+            <%= f.input :redflag, label: false, placeholder: "Did you find anything concerning about this topic?", input_html: { data: { controller: "star-rating" } } %>
+            <%= f.input :quality, label: false, placeholder: "How would you rate the quality of [user_topic_id]'s content?", input_html: { data: { controller: "star-rating" } } %>
+            <%= f.input :expertise, label: false, placeholder: "How would you rate the [user_topic_id]'s expertise on this topic?", input_html: { data: { controller: "star-rating" } } %>
+            <%= f.input :behavior, label: false, placeholder: "How would you rate the [user_topic_id]'s behavior?", input_html: { data: { controller: "star-rating" } } %>
+            <%= f.button :submit, "Submit Review", class: "btn btn-primary" %>
+          end
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="text-center col-12">
+      <% @topics.each do |topic| %>
+        <div class="col-12" >
+          <div class="card-topic">
+            <%#= link_to topic , class: 'text-decoration-none'do %>
+              <% avatar = ["avatar-1.png", "avatar-2.png","avatar-3.png","avatar-4.png",
+              "avatar-5.png","avatar-6.png","avatar-7.png","avatar-8.png", "avatar-9.png","avatar-10.png"] %>
+              <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
+              <div class="card-topic-info">
+                <div class="card-topic-info-name">
+                  <h4><strong><%= topic.name %></strong></h4>
+                </div><hr>
+                <div class="card-topic-info-description">
+                  <p><%= topic.description %></p>
+                </div><hr>
+                <div class="card-topic-info-expertise">
+                  <p>Expertise:<% topic.expertise.times do %>
+                    <i class="fa-solid fa-star" style="color: black;"></i>
+                  <% end %></p>
+                </div>
+              </div>
+            <%# end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
