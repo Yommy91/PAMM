@@ -1,8 +1,10 @@
-<div class="container chatroom"
+<div class="container-chatroom"
   data-controller="topic-subscription"
   data-topic-subscription-topic-id-value="<%= @topic.id %>">
 
+  <div class="chat-header">
   <h1>#<%= @topic.name %></h1>
+  </div>
 
   <div class="messages" data-topic-subscription-target="messages">
     <% @topic.messages.each do |message| %>
@@ -18,5 +20,5 @@
     placeholder: "Message ##{@topic.name}",
     wrapper_html: {class: "flex-grow-1"}
   %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <%= f.submit "Send", class: 'styled-button-chat' %>
 <% end %>
