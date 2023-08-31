@@ -11,9 +11,17 @@
     <% end %>
   </div>
   <div>
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%#= link_to "#", class: "navbar-brand" do %>
       <i class="fa-solid fa-magnifying-glass"></i>
-    <% end %>
+      <%= form_with url: topics_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Start Your Search 🔍"
+        %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    <%# end %>
   </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

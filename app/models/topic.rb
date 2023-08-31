@@ -10,4 +10,11 @@ class Topic < ApplicationRecord
   def reviews
     Review.where(reviewee_id: self.user_topics.pluck(:id)).or(Review.where(reviewer_id: self.user_topics.pluck(:id))).distinct
   end
+
+  include PgSearch::Model
+  pg_search_scope :search,
+    against: [ :name, :description, :global_rating, :quality, :expertise, :behavior],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
