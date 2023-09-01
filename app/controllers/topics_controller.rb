@@ -1,6 +1,13 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all
+
+    if params[:query].present?
+      @topics = Topic.search(params[:query])
+
+    else
+      @topics = Topic.all
+    end
   end
 
   def new
