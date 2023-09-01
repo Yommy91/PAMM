@@ -3,8 +3,12 @@
     <h1><strong>PAMM</strong></h1>
     <p class="mt-4">Talk freely about subjects that matters for you.</p>
     <div class="mt-5">
-    <%= link_to 'Sign up', new_user_registration_path, class: 'styled-button' %>
-    <%= link_to 'Login', new_user_session_path, class: 'styled-button' %>
+    <% if user_signed_in? %>
+      <%= link_to "Browse topics", topics_path, class: 'styled-button' %>
+    <% else %>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'styled-button' %>
+      <%= link_to 'Login', new_user_session_path, class: 'styled-button' %>
+    <% end %>
     </div>
 
   </div>
@@ -26,12 +30,13 @@
         <img src="" alt="">
         <i class="fas fa-phone-alt fa-5x"></i>
         <p class="mt-4">Discuss <strong>Topics</strong> that really matter for you, without restraints thanks to our voice changer.</p>
-      <div class="mt-5">
-        <%= link_to 'Sign up', new_user_registration_path, class: 'styled-button' %>
-        <%= link_to 'Login', new_user_session_path, class: 'styled-button' %>
-      </div>
+      <% unless user_signed_in? %>
+        <div class="mt-5">
+          <%= link_to 'Sign up', new_user_registration_path, class: 'styled-button' %>
+          <%= link_to 'Login', new_user_session_path, class: 'styled-button' %>
+        </div>
+      <% end %>
       </div>
     </div>
 
 </div>
-
