@@ -105,7 +105,7 @@ global_rating = [quality, expertise, behavior].sum / 3
 topic1 = Topic.create!(
   name: "Kylian Mbappe performance.",
   description: "Amazing performance of Kylian Mbappe against Lens.",
-  user: User.find_by(email: "user1@example.com"),
+  user: User.first,
   theme: Theme.find_by(name: "Football"),
   global_rating: global_rating,
   quality: quality,
@@ -121,7 +121,7 @@ global_rating = [quality, expertise, behavior].sum / 3
 topic2 = Topic.create!(
   name: "Rugby world cup favourites",
   description: "France is the favourite for the next world cup.",
-  user: User.find_by(email: "user2@example.com"),
+  user: User.second,
   theme: Theme.find_by(name: "Rugby"),
   global_rating: global_rating,
   quality: quality,
@@ -138,8 +138,128 @@ global_rating = [quality, expertise, behavior].sum / 3
 topic3 = Topic.create!(
   name: "Novak Djokovic is the best tennis player of all time",
   description: "Djokovic will win the next Championship.",
-  user: User.find_by(email: "user3@example.com"),
+  user: User.third,
   theme: Theme.find_by(name: "Tennis"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic4 = Topic.create!(
+  name: "Le Wagons is the best coding bootcamp in France",
+  description: "Can we become a developer in 9 weeks?",
+  user: User.all.sample,
+  theme: Theme.find_by(name: "Coding"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic5 = Topic.create!(
+  name: "Amazing Talker is best app to learn a new language",
+  description: "Amazing Talker is by far the best to learn german.",
+  user: User.all.sample,
+  theme: Theme.find_by(name: "Tech"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic6 = Topic.create!(
+  name: "USA will win the world cup",
+  description: "USA has no competition.",
+  user: User.all.sample,
+  theme: Theme.find_by(name: "Basketball"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic7 = Topic.create!(
+  name: "Fashion is the best industry to work in",
+  description: "Fashion becomes more and more important in our society.",
+  user: User.all.sample,
+  theme: Theme.find_by(name: "Fashion"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic8 = Topic.create!(
+  name: "Health is our most important asset",
+  description: "It is challenging to stay healthy living in Paris.",
+  user: User.all.sample,
+  theme: Theme.find_by(name: "Health"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic9 = Topic.create!(
+  name: "How to become a millionaire",
+  description: "the best way to become a millionaire is to invest in the stock market.",
+  user: User.all.sample,
+  theme: Theme.find_by(name: "Finance"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic10 = Topic.create!(
+  name: "PEPPE Pizza is the best pizza in Paris",
+  description: "Even better than in Napoli.",
+  user: User.all.sample,
+  theme: Theme.find_by(name: "Food"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic11 = Topic.create!(
+  name: "Pachanga is the best salsa club in Paris",
+  description: "Cuba Libre!",
+  user: User.all.sample,
+  theme: Theme.find_by(name: "Dancing"),
   global_rating: global_rating,
   quality: quality,
   expertise: expertise,
@@ -150,6 +270,14 @@ puts "Creating user topics..."
 user_topic1 = UserTopic.create!(user: User.first, topic: Topic.first, status: true)
 user_topic2 = UserTopic.create!(user: User.second, topic: Topic.second, status: true)
 user_topic3 = UserTopic.create!(user: User.third, topic: Topic.third, status: true)
+user_topic4 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
+user_topic5 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
+user_topic6 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
+user_topic7 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
+user_topic8 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
+user_topic9 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
+user_topic10 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
+user_topic11 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
 
 
 puts "Creating messages..."
