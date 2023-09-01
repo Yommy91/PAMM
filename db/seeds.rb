@@ -291,7 +291,7 @@ global_rating = [quality, expertise, behavior].sum / 3
 topic5 = Topic.create!(
   name: "Amazing Talker is best app to learn a new language",
   description: "Amazing Talker is by far the best to learn german.",
-  user: User.find_by(email: "user5@example.com "),
+  user: User.find_by(email: "user5@example.com"),
   theme: Theme.find_by(name: "Tech"),
   global_rating: global_rating,
   quality: quality,
