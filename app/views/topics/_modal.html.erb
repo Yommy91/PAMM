@@ -1,0 +1,20 @@
+<!-- Scrollable modal -->
+<div class="modal fade " id="modal<%= topic.id %>" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content modal-style">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= topic.name %></h5>
+      </div>
+      <div class="modal-body">
+        <p><%= topic.description %></p>
+        <p>Expertise:<% topic.expertise.times do %>
+          <i class="fa-solid fa-star modal-color"></i>
+        <% end %></p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to  "Back", topics_path, class: "btn btn-outline-light rounded-5" %>
+        <%= link_to  "Join chat", topic_path(topic), class: "btn btn-outline-light rounded-5" %>
+      </div>
+    </div>
+  </div>
+</div>

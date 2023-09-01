@@ -1,9 +1,14 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all
+
+    if params[:query].present?
+      @topics = Topic.search(params[:query])
+
+    else
+      @topics = Topic.all
+    end
   end
-
-
 
   def new
     @topic = Topic.new
@@ -22,8 +27,8 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @user_topic = UserTopic.new(topic: @topic, user: current_user)
-    @themes = Theme.all
+    @reviewee_user_topic = @topic.user_topics.where.not(user_id: current_user.id).first
+    @message = Message.new
   end
 
   def destroy

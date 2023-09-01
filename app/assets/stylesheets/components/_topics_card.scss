@@ -1,0 +1,31 @@
+.card-topic{
+  overflow: hidden;
+  background: #FFBB5C;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  margin-bottom: 15px;
+  color: black;
+  padding-top: 20px;
+}
+
+.card-topic-info{
+  padding-left: 10px
+}
+
+.card-topic-info-name{
+  text-align: left;
+  margin-bottom: -10px;
+}
+
+.card-topic-info-description{
+  margin-top: -10px;
+  margin-bottom: -10px;
+  text-align: left;
+}
+
+.card-topic-info-expertise{
+  margin-top: -10px;
+  text-align: left;
+}
