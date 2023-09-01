@@ -3,11 +3,6 @@
   data-topic-subscription-topic-id-value="<%= @topic.id %>"
   data-topic-subscription-current-user-id-value="<%= current_user.id %>">
 
-
-  <div class="chat-header">
-  <h1>#<%= @topic.name %></h1>
-  </div>
-
   <div class="chat-messages" data-topic-subscription-target="messages">
     <% @topic.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
