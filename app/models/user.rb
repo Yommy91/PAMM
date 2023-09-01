@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :topics, dependent: :destroy
   has_many :user_topics, dependent: :destroy
+  has_many :joined_topics, through: :user_topics, source: :topic
   has_many :user_themes, dependent: :destroy
   has_many :themes, through: :user_themes
 end
