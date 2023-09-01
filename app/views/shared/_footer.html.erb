@@ -1,14 +1,24 @@
 <div class="footer">
-  <ul>
-  <li><a href="#"><i class="fa-regular fa-hand"></i></a>
-  </li>
-  <li><a href="#"><i class="fa-regular fa-comments"></i></a>
-  </li>
-  <li><a href="#"><i class="fa-solid fa-plus"></i></a>
-  </li>
-  <li><a href="#"><i class="fa-regular fa-bell"></i></a>
-  </li>
-  <li><a href="#"><i class="fa-solid fa-rotate-left"></i></a>
-  </li>
-  </ul>
+  <% if user_signed_in? %>
+    <ul>
+      <li><a href="#"><i class="fa-regular fa-hand"></i></a>
+      </li>
+      <li><a href="#"><i class="fa-regular fa-comments"></i></a>
+      </li>
+      <li><a href="#"><i class="fa-solid fa-plus"></i></a>
+      </li>
+      <li><a href="#"><i class="fa-regular fa-bell"></i></a>
+      </li>
+      <li><a href="#"><i class="fa-solid fa-rotate-left"></i></a>
+      </li>
+    </ul>
+  <% else %>
+    <div class="reseaux">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  <% end %>
 </div>
