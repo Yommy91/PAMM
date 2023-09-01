@@ -146,10 +146,148 @@ topic3 = Topic.create!(
   behavior: behavior
 )
 
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic4 = Topic.create!(
+  name: "Le Wagons is the best coding bootcamp in France",
+  description: "Can we become a developer in 9 weeks?",
+  user: User.find_by(email: "user4@example.com"),
+  theme: Theme.find_by(name: "Coding"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+
+)
+
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic5 = Topic.create!(
+  name: "Amazing Talker is best app to learn a new language",
+  description: "Amazing Talker is by far the best to learn german.",
+  user: User.find_by(email: "user5@example.com "),
+  theme: Theme.find_by(name: "Tech"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic6 = Topic.create!(
+  name: "USA will win the world cup",
+  description: "USA has no competition.",
+  user: User.find_by(email: "user6@example.com"),
+  theme: Theme.find_by(name: "Basketball"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic7 = Topic.create!(
+  name: "Fashion is the best industry to work in",
+  description: "Fashion becomes more and more important in our society.",
+  user: User.find_by(email: "user7@example.com"),
+  theme: Theme.find_by(name: "Fashion"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic8 = Topic.create!(
+  name: "Health is our most important asset",
+  description: "It is challenging to stay healthy living in Paris.",
+  user: User.find_by(email: "user8@example.com"),
+  theme: Theme.find_by(name: "Health"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic9 = Topic.create!(
+  name: "How to become a millionaire",
+  description: "the best way to become a millionaire is to invest in the stock market.",
+  user: User.find_by(email: "user8@example.com"),
+  theme: Theme.find_by(name: "Finance"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic10 = Topic.create!(
+  name: "PEPPE Pizza is the best pizza in Paris",
+  description: "Even better than in Napoli.",
+  user: User.find_by(email: "user9@example.com"),
+  theme: Theme.find_by(name: "Food"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+
+quality = rand(1..5)
+expertise = rand(1..5)
+behavior = rand(1..5)
+global_rating = [quality, expertise, behavior].sum / 3
+
+topic11 = Topic.create!(
+  name: "Pachanga is the best salsa club in Paris",
+  description: "Cuba Libre!",
+  user: User.find_by(email: "user10@example.com"),
+  theme: Theme.find_by(name: "Dancing"),
+  global_rating: global_rating,
+  quality: quality,
+  expertise: expertise,
+  behavior: behavior
+)
+
+
 puts "Creating user topics..."
 user_topic1 = UserTopic.create!(user: User.first, topic: Topic.first, status: true)
 user_topic2 = UserTopic.create!(user: User.second, topic: Topic.second, status: true)
 user_topic3 = UserTopic.create!(user: User.third, topic: Topic.third, status: true)
+user_topic4 = UserTopic.create!(user: User.fourth, topic: Topic.fourth, status: true)
+user_topic5 = UserTopic.create!(user: User.fifth, topic: Topic.fifth, status: true)
+user_topic6 = UserTopic.create!(user: User.sixth, topic: Topic.sixth, status: true)
+user_topic7 = UserTopic.create!(user: User.seventh, topic: Topic.seventh, status: true)
+user_topic8 = UserTopic.create!(user: User.eighth, topic: Topic.eighth, status: true)
+user_topic9 = UserTopic.create!(user: User.ninth, topic: Topic.ninth, status: true)
+user_topic10 = UserTopic.create!(user: User.tenth, topic: Topic.tenth, status: true)
+user_topic11 = UserTopic.create!(user: User.eleventh, topic: Topic.eleventh, status: true)
 
 
 puts "Creating messages..."
