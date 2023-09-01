@@ -1,24 +1,39 @@
 <div class="footer">
   <% if user_signed_in? %>
     <ul>
-      <li><a href="#"><i class="fa-regular fa-hand"></i></a>
+      <li>
+        <%= link_to "#", class: "navbar-brand" do %>
+          <i class="fa-regular fa-hand"></i>
+        <% end %>
       </li>
-      <li><a href="#"><i class="fa-regular fa-comments"></i></a>
+      <li>
+        <%= link_to "#", class: "navbar-brand" do %>
+          <i class="fa-regular fa-comments"></i>
+        <% end %>
       </li>
-      <li><a href="#"><i class="fa-solid fa-plus"></i></a>
+      <li>
+        <%= link_to "#", class: "navbar-brand" do %>
+          <i class="fa-solid fa-plus"></i>
+        <% end %>
       </li>
-      <li><a href="#"><i class="fa-regular fa-bell"></i></a>
+      <li>
+        <%= link_to "#", class: "navbar-brand" do %>
+          <i class="fa-regular fa-bell"></i>
+        <% end %>
       </li>
-      <li><a href="#"><i class="fa-solid fa-rotate-left"></i></a>
+       <li>
+        <%= link_to "#", class: "navbar-brand" do %>
+          <i class="fa-solid fa-rotate-left"></i>
+        <% end %>
       </li>
     </ul>
   <% else %>
-    <div class="reseaux">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
+    <div class="footer-links">
+      <a href="https://github.com/lewagon" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.youtube.com/c/lewagon" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.facebook.com/lewagon" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.meetup.com/pro/lewagon/" target="_blank"><i class="fa-brands fa-meetup"></i></a>
+      <a href="https://www.linkedin.com/school/le-wagon/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
   <% end %>
 </div>
