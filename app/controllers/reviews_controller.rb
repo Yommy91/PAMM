@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     @review.reviewer_id = topic.user_topics.find_by(user_id: current_user.id).id
 
     if @review.save
-      redirect_to topic_path(topic), notice: 'Review was successfully created.'
+      redirect_to topics_path, notice: 'Review was successfully created.'
     else
       render "reviews/new", status: :unprocessable_entity
     end
