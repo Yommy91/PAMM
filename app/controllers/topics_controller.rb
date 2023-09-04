@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
       @topics = @topics.select { |topic| topic.user_topics.count == 1 }
     else
       @topics = Topic.all.select { |topic| topic.user_topics.count == 1 }
-      debugger
+
 
       @topics = Topic.where(id: @topics.map(&:id))
       @user_themes_topics = @topics.joins(:theme).where(themes: { id: current_user.themes.pluck(:id) })
@@ -17,7 +17,7 @@ class TopicsController < ApplicationController
   def new
     @topic = Topic.new
   end
-
+  
   def create
     @topic = current_user.topics.build(topic_params)
     @topic.user = current_user
