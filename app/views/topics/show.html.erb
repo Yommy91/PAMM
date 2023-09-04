@@ -4,16 +4,16 @@
     <%= link_to  "Back", topics_path(@topic), class: "btn btn-outline-light rounded-5" %>
     <h3><%= @topic.name %></h3>
     <% unless @topic.users.include?(current_user) %>
-      <p><%= @topic.description %></p>
-      <p>Expertise:<% @topic.expertise.times do %>
-        <i class="fa-solid fa-star modal-color"></i>
-      <% end %></p>
-      <p>Quality:<% @topic.quality.times do %>
-        <i class="fa-solid fa-star modal-color"></i>
-      <% end %></p>
-      <p>Behavior:<% @topic.behavior.times do %>
-        <i class="fa-solid fa-star modal-color"></i>
-      <% end %></p>
+      <p><%#= @topic.description %></p>
+      <%# <p>Expertise:@topic.expertise.times do %>
+        <%# <i class="fa-solid fa-star modal-color"></i> %>
+      <%# end %></p>
+      <%# <p>Quality:@topic.quality.times do %>
+        <%# <i class="fa-solid fa-star modal-color"></i> %>
+      <%# end %></p>
+      <%# <p>Behavior:@topic.behavior.times do %>
+        <%# <i class="fa-solid fa-star modal-color"></i> %>
+      <%# end %></p>
       <br><br>
       <div class="">
         <%= link_to  "Join chat", topic_user_topics_path(@topic), data: { turbo_method: :post }, class: "btn btn-outline-light rounded-5" %>
@@ -35,7 +35,7 @@
         <br><br>
         </div>
           <h3 class="text-center">Add a Review</h3>
-          <%= link_to "Add review", new_user_topic_review_path(@reviewee_user_topic) %>
+          <%#= link_to "Add review", new_user_topic_review_path(@reviewee_user_topic) %>
         </div>
       </div>
 
