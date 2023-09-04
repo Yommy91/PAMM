@@ -5,8 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :topics, dependent: :destroy
+
   has_many :user_topics, dependent: :destroy
   has_many :joined_topics, through: :user_topics, source: :topic
+  has_many :reviews_as_reviewee, through: :user_topics
+
   has_many :user_themes, dependent: :destroy
   has_many :themes, through: :user_themes
 end

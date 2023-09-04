@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_31_130059) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_04_104913) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum"
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string "content"
@@ -42,9 +70,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_31_130059) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "global_rating"
-    t.integer "quality"
-    t.integer "expertise"
-    t.integer "behavior"
+    t.integer "interesting"
+    t.integer "fun"
+    t.integer "nice"
     t.index ["reviewee_id"], name: "index_reviews_on_reviewee_id"
     t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end
@@ -62,10 +90,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_31_130059) do
     t.bigint "theme_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "global_rating"
-    t.integer "quality"
-    t.integer "expertise"
-    t.integer "behavior"
     t.index ["theme_id"], name: "index_topics_on_theme_id"
     t.index ["user_id"], name: "index_topics_on_user_id"
   end
@@ -98,10 +122,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_31_130059) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.string "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "messages", "topics"
   add_foreign_key "messages", "user_topics"
   add_foreign_key "reviews", "user_topics", column: "reviewee_id"
