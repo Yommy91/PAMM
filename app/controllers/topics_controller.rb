@@ -38,4 +38,14 @@ class TopicsController < ApplicationController
   def destroy
 
   end
+
+  private
+
+  def topic_params
+    params.require(:topic).permit(:name, :description, :theme_id, :user_id)
+  end
+
+  def set_topic
+    @topic = Topic.find(params[:id])
+  end
 end
