@@ -7,7 +7,7 @@
   border: 1px solid;
   border-color: white;
   border-radius: 30px;
-  margin-bottom: 15px;
+  margin-bottom: -8px;
 }
 
 .card-topic-info{
@@ -40,4 +40,9 @@
   border-color: white;
   margin-right: 8px;
   height: 100px;
+}
+
+.head-card{
+  display: flex;
+  justify-content: space-around;
 }

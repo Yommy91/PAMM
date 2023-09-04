@@ -1,0 +1,12 @@
+<div class="container text-white">
+  <h4 class="mb-5">
+    Create a new topic <%#= @current_user.topics %>
+  </h4>
+  <%= simple_form_for [@current_user, @topic] do |f| %>
+    <%= f.input :theme_id, collection: Theme.all, label: false, prompt: "Select a theme", input_html: { data: { controller: "select2" } } %>
+    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+    <%= f.input :name, label: false, placeholder: "What is the name of your topic?"%>
+    <%= f.input :description, label: false, placeholder: "Give a description of your topic", input_html: { rows: 4 } %>
+    <%= f.button :submit, "Create Topic", class: "btn btn-primary" %>
+  <% end %>
+</div>
