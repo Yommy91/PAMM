@@ -4,18 +4,20 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border: 1px solid;
+  border-color: white;
   border-radius: 30px;
   margin-bottom: 15px;
-  padding-top: 20px;
+  padding: 5px;
 }
 
 .card-topic-info{
-  padding-left: 10px
+  padding: 10px
 }
 
 .card-topic-info-name{
   text-align: left;
-  margin-bottom: -10px;
+  margin-bottom: 20px;
 }
 
 .card-topic-info-description{
@@ -27,4 +29,9 @@
 .card-topic-info-expertise{
   margin-top: -10px;
   text-align: left;
+}
+
+.topic-avatar{
+
+  margin-right: 10px;
 }
