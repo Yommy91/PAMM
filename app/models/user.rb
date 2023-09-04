@@ -11,3 +11,4 @@ class User < ApplicationRecord
   has_many :themes, through: :user_themes
 end
 
+
