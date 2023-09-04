@@ -6,7 +6,3 @@ class Review < ApplicationRecord
   has_one :reviewer, through: :reviewer_user_topic, source: :user
 end
 
-
-# Ajouter deux columns expertise et behavior
-# ajouter la column rating dans topics pour qu'on puisse faire une moyenne des votes
-# pour que la note évolue
