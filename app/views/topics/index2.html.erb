@@ -1,21 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="text-center col-12">
-      <h1 class="mt-3 mb-2">Browse current topics</h1>
-      <div class="mb-5">
-        <%= form_with url: topics_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control rounded-4",
-            placeholder: "Start Your Search" %>
-            <div>
-              <%= submit_tag "Search", name: "", class: "btn btn-primary rounded-4 ms-2"%>
-            </div>
-        <% end %>
-      </div>
+      <h1 class="mt-3 mb-2">Your chatroom</h1>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="mySwitch" name="active" value="yes" checked>
+          <label class="form-check-label" for="mySwitch">Active</label>
+        </div>
         <% if @joined_topics.present? %>
           <% @joined_topics.each do |topic| %>
             <div class="col-12" >
+            <div class="head-card">
+              <small><em class="text-muted"><%= distance_of_time_in_words_to_now(topic.created_at) %> ago</em></small>
+              <small><em class="text-muted"><%= topic.messages.count %> messages</em></small>
+            </div>
               <div class="card-topic" data-bs-toggle="modal" data-bs-target="#modal<%= topic.id %>">
                 <div class="card-topic-info">
                   <div class="card-topic-info-name">
@@ -35,9 +32,6 @@
                     <p class="mb-0"><%= topic.user.username %></p>
                   </div>
                 </div>
-                <%= link_to "#", class: "navbar-brand" do %>
-                  <i class="fa-regular fa-comments btn btn-warning mb-3">  JOIN</i>
-                <% end %>
               </div>
             </div>
             <%= render partial: 'topics/modal', locals: { topic: topic } %>
