@@ -13,11 +13,19 @@
 }
 
 .sender-style {
-  background-color: #FFBB5C;
-  color: black;
+
+  color: rgba(245, 241, 241, 0.933);
 }
 
 .receiver-style {
-  background-color: #C9C5C5;
-  color: black;
+
+  color:rgba(245, 241, 241, 0.933);
+}
+
+#message p {
+  background-color: rgb(108, 111, 114);
+  border-radius: 30px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 3px;
+  padding-left: 15px;
 }
