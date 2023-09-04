@@ -13,6 +13,12 @@ class UsersController < ApplicationController
     @average_nice_note = @user.reviews_as_reviewee.average(:nice)
   end
 
+  def update_avatar
+    @user = current_user
+    @user.avatar.attach(params[:avatar])
+    redirect_to @user, notice: 'Avatar updated succesfully.'
+  end
+
   private
 
   def user_params
