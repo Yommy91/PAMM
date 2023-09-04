@@ -6,9 +6,11 @@
         <%= form_with url: topics_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "form-control rounded-4",
             placeholder: "Start Your Search" %>
-          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+            <div>
+              <%= submit_tag "Search", name: "", class: "btn btn-primary rounded-4 ms-2"%>
+            </div>
         <% end %>
       </div>
         <% if @joined_topics.present? %>
