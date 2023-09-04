@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_one_attached :avatar
   has_many :topics, dependent: :destroy
 
   has_many :user_topics, dependent: :destroy
@@ -13,5 +14,3 @@ class User < ApplicationRecord
   has_many :user_themes, dependent: :destroy
   has_many :themes, through: :user_themes
 end
-
-
