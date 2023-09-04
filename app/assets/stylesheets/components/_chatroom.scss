@@ -1,6 +1,5 @@
-
 .body {
-  background-color: #000000;
+  background-color: #1A1A1A;
   color: #ffffff;
   font-family: Roboto, sans-serif;
   margin: 0;
@@ -14,7 +13,8 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  background-color: #1a1a1a;
+  background-color: #1A1A1A;
+  border-radius: 10px;
 }
 
 .chat-header {
@@ -28,23 +28,25 @@
   flex-grow: 1;
   overflow-y: scroll;
   padding: 10px;
-  background-color: #333333;
-  border-radius: 5px;
+  background-color: #1A1A1A;
+  border-radius: 10px;
 }
 
-#message {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.1rem 0.5rem;
-  border-radius: 4px;
+#message_content {
+  background: #000000;
+  padding: 15px;
+  border-radius: 10px;
   margin: 0.2rem;
 }
 
 .button-send {
-  padding: 8px 15px;
+  padding: 15px;
   margin-left: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #FFBB5C;
-  color: black;
+  background-color: #000000;
+  color: rgb(245, 235, 235);
   cursor: pointer;
+  border:solid;
+  height: 57px;
 }

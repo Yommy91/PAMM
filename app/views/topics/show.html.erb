@@ -40,11 +40,10 @@
       </div>
 
     <% else %>
-
-      <%= render "topics/chatroom" %>
       <% if @current_user_topic.status == true %>
         <%= link_to "Leave", user_topic_path(@current_user_topic), data: { turbo_method: :patch }, class: "btn btn-outline-light rounded-5" %>
       <% end %>
+      <%= render "topics/chatroom" %>
     <% end %>
 
   </div>
