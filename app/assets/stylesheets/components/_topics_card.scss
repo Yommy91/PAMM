@@ -1,12 +1,13 @@
 .card-topic{
   overflow: hidden;
-  background: #FFBB5C;
+  background: black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border: 2px, solid, white;
+  border-color: white;
   border-radius: 30px;
   margin-bottom: 15px;
-  color: black;
   padding-top: 20px;
 }
 
