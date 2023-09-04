@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   resources :user_topics, only: [:update] do
     resources :reviews, only: [:new, :create]
   end
-  resources :users, only: [:update]
+  resources :users, only: [:update,]
 end
