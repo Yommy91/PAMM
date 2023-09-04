@@ -23,44 +23,34 @@
       <div class="col-12 d-flex justify-content-center gap-3">
           <% avatar = ["avatar-1.png", "avatar-2.png","avatar-3.png","avatar-4.png",
         "avatar-5.png","avatar-6.png","avatar-7.png","avatar-8.png", "avatar-9.png","avatar-10.png"] %>
-        <%= @average_interesting_note %>
-        <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
-          <% avatar = ["avatar-1.png", "avatar-2.png","avatar-3.png","avatar-4.png",
-        "avatar-5.png","avatar-6.png","avatar-7.png","avatar-8.png", "avatar-9.png","avatar-10.png"] %>
-        <%= @average_fun_note %>
-        <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
-          <% avatar = ["avatar-1.png", "avatar-2.png","avatar-3.png","avatar-4.png",
-        "avatar-5.png","avatar-6.png","avatar-7.png","avatar-8.png", "avatar-9.png","avatar-10.png"] %>
-        <%= @average_nice_note %>
-        <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
+        <div class="review-card">
+        <div class="text-align-center">
+          <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
+          <p><%= @average_interesting_note %></p>
+        </div>
+        <div class="text-align-center">
+          <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
+          <p><%= @average_fun_note %></p>
+        </div>
+        <div class="text-align-center">
+          <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
+          <p class=""><%= @average_nice_note %></p>
+        </div>
+      </div>
     </div>
   </div>
 
   <h2 class="mt-3">Reviews :</h2>
-    <div class="d-flex mt-3 mb-5">
-      <div class="me-4 align-items-center d-flex gap-4">
-        <% avatar = ["avatar-1.png", "avatar-2.png","avatar-3.png","avatar-4.png",
-        "avatar-5.png","avatar-6.png","avatar-7.png","avatar-8.png", "avatar-9.png","avatar-10.png"] %>
-        <%= image_tag("avatars/#{avatar.sample}", class: 'avatar-large', alt: 'avatar') %>
-        <p>Loren ipsum blabla</p>
-      </div>
+  <% @user.reviews_as_reviewee.each do |review| %>
+    <div class="review-card">
+      <% if review.reviewer.avatar.attached? %>
+        <%= image_tag review.reviewer.avatar %>
+      <% else %>
+        <p>Aucun avatar</p>
+      <% end %>
+      <p><%= review.content %></p>
     </div>
-    <div class="d-flex mt-3 mb-5">
-      <div class="me-4 align-items-center d-flex gap-4">
-        <% avatar = ["avatar-1.png", "avatar-2.png","avatar-3.png","avatar-4.png",
-        "avatar-5.png","avatar-6.png","avatar-7.png","avatar-8.png", "avatar-9.png","avatar-10.png"] %>
-        <%= image_tag("avatars/#{avatar.sample}", class: 'avatar-large', alt: 'avatar') %>
-        <p>Loren ipsum blabla</p>
-      </div>
-    </div>
-    <div class="d-flex mt-3 mb-5">
-      <div class="me-4 align-items-center d-flex gap-4">
-        <% avatar = ["avatar-1.png", "avatar-2.png","avatar-3.png","avatar-4.png",
-        "avatar-5.png","avatar-6.png","avatar-7.png","avatar-8.png", "avatar-9.png","avatar-10.png"] %>
-        <%= image_tag("avatars/#{avatar.sample}", class: 'avatar-large', alt: 'avatar') %>
-        <p>Loren ipsum blabla</p>
-      </div>
-    </div>
+  <% end %>
 
 
 </div>
