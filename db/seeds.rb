@@ -375,7 +375,7 @@ puts "Creating reviews..."
 interesting = rand(1..5)
 fun = rand(1..5)
 nice = rand(1..5)
-global_rating = [quality, expertise, behavior].sum / 3
+global_rating = [interesting, fun, nice].sum / 3
 
 review1 = Review.create(
   content: "Great contributor!",
@@ -389,6 +389,11 @@ review1 = Review.create(
   nice: 5
 )
 
+interesting = rand(1..5)
+fun = rand(1..5)
+nice = rand(1..5)
+global_rating = [interesting, fun, nice].sum / 3
+
 review2 = Review.create(
   content: "Insightful discussions.",
   rating: 4,
@@ -400,6 +405,11 @@ review2 = Review.create(
   fun: 3,
   nice: 4
 )
+
+interesting = rand(1..5)
+fun = rand(1..5)
+nice = rand(1..5)
+global_rating = [interesting, fun, nice].sum / 3
 
 review3 = Review.create(
   content: "Very knowledgeable about the topic.",
