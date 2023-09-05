@@ -12,7 +12,7 @@ class Topic < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search,
-    against: [ :name, :description, :global_rating, :quality, :expertise, :behavior],
+    against: [ :name, :description, :user, :theme],
     using: {
       tsearch: { prefix: true }
     }
