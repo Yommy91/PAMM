@@ -1,13 +1,28 @@
 .card-topic{
-  overflow: hidden;
-  background: #000000;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
   border: 1px solid;
   border-color: white;
-  border-radius: 30px;
-  margin-bottom: -8px;
+  border-radius: 1rem;
+  flex-wrap: wrap;
+  padding: 0.3rem;
+  .card-topic-info {
+    flex: 1;
+  }
+  .card-topic-user {
+    flex: 0 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-topic-btn {
+    flex: 100%;
+  }
+  & + .styled-button {
+    position: relative;
+    top: -15px;
+  }
 }
 
 .card-topic-info{
@@ -16,7 +31,13 @@
 
 .card-topic-info-name{
   text-align: left;
-  margin-bottom: 20px;
+  > div {
+    font-size: 0.8rem;
+  }
+  > p {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
 }
 
 .card-topic-info-description{
