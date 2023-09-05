@@ -14,5 +14,7 @@ class User < ApplicationRecord
   has_many :user_themes, dependent: :destroy
   has_many :themes, through: :user_themes
 
+  has_one :user_grade
+
   validates :username, presence: true
 end
