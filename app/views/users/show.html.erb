@@ -4,12 +4,18 @@
     <%= render 'shared/avatar_with_badge', user: @user %>
   </div>
   <div class="username-description">
-    <h1><%= @user.username.capitalize %></h1>
+    <div class="d-flex">
+      <h1><%= @user.username.capitalize %></h1>
+      <p>Badge ?</p>
+    </div>
     <p><%= @user.description || 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, pariatur? Sapiente nesciunt vel nostrum id quisquam molestiae odio' %></p>
   </div>
   </div>
+    <% if @user = current_user %>
+    <%= link_to 'Sign out', destroy_user_session_path(@user), class: 'styled-button', method: :delete %>
+    <% end %>
 
-  <h2>Favorite themes :</h2>
+  <div class="pt-4"><h2>Favorite themes :</h2></div>
   <div class="mb-5 mt-4">
   <% @user.themes.each do |theme| %>
     <div class="badge rounded-pill bg-info">
@@ -22,39 +28,41 @@
 
     <h2>Profil :</h2>
   <div class="mt-3">
-      <div class="col-12 d-flex justify-content-center gap-5">
+      <div class="col-12 d-flex justify-content-center gap-4">
           <% avatar = ["avatar-1.png", "avatar-2.png","avatar-3.png","avatar-4.png",
         "avatar-5.png","avatar-6.png","avatar-7.png","avatar-8.png", "avatar-9.png","avatar-10.png"] %>
         <div class="text-align-center">
           <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
-          <p class="rating"><%= @average_interesting_note %></p>
+          <p class="rating"><%= @average_interesting_note %>/5</p>
         </div>
         <div class="text-align-center">
           <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
-          <p class="rating"><%= @average_fun_note %></p>
+          <p class="rating"><%= @average_fun_note %>/5</p>
         </div>
         <div class="text-align-center">
           <%= image_tag("avatars/#{avatar.sample}", class: 'ms-1 avatar-large', alt: 'avatar') %>
-          <p class="rating"><%= @average_nice_note %></p>
+          <p class="rating"><%= @average_nice_note %>/5</p>
         </div>
     </div>
   </div>
 
   <h2 class="mt-3">Reviews :</h2>
   <% @user.reviews_as_reviewee.each do |review| %>
+  <div class="reviews">
     <div class="d-flex">
       <% if review.reviewer.avatar %>
         <%= image_tag review.reviewer.avatar %>
       <% else %>
-        <p>Aucun avatar</p>
+        <p>No avatar</p>
       <% end %>
     <div>
       <div class="d-flex">
-        <h1><%= review.reviewer.username.capitalize %></h1>
+        <h2><%= review.reviewer.username.capitalize %></h2>
         <p>Nom du topic</p>
       </div>
         <p><%= review.content %></p>
       </div>
     </div>
+  </div>
   <% end %>
 </div>
