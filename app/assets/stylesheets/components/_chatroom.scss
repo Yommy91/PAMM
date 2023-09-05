@@ -7,13 +7,11 @@
 }
 
 .chat-container {
-  width: 95%;
-  height: 100vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  background-color: #1A1A1A;
   border-radius: 10px;
 }
 
@@ -30,6 +28,7 @@
   padding: 10px;
   background-color: #1A1A1A;
   border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 #message_content {
@@ -47,6 +46,10 @@
   background-color: #000000;
   color: rgb(245, 235, 235);
   cursor: pointer;
-  border:solid;
+  border: solid;
   height: 57px;
+}
+
+.message_content {
+  margin-bottom: 0 !important;
 }

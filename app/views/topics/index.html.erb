@@ -8,7 +8,10 @@
           class: "form-control rounded-4",
           placeholder: "Start Your Search" %>
         <div>
-          <%= submit_tag "Search", name: "", class: "btn btn-search border border-light rounded-4"%>
+          <%= button_tag class: "btn btn-search border border-light rounded-4" do %>
+              <i class="fa-solid fa-eye"></i>
+          <% end %>
+          <%#= submit_tag "Search", name: "", class: "btn btn-search border border-light rounded-4"%>
         </div>
       <% end %>
     </div>

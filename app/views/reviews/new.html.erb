@@ -1,15 +1,18 @@
 <div class="container text-white">
-  <h4 class="mb-5">
-    Leave a Review about your tchat with <%= @reviewee_user.username.capitalize %>
-  </h4>
-
-  <%= simple_form_for [@reviewee_user_topic, @review] do |f| %>
-    <%= f.input :content, label: false, placeholder: "What did you think of this topic?", input_html: { rows: 4 } %>
-    <%= f.input :rating, collection: (1..5), required: :false, label: false, prompt: "How would you rate this topic?", input_html: { data: { controller: "star-rating" } } %>
-    <%= f.input :red_flag, input_html: { data: { controller: "star-rating" } }, label_html: { class: 'text-white' } %>
-    <%= f.input :quality, collection: (1..5), label: false, prompt: "How would you rate the quality of #{@reviewee_user.username.capitalize}'s content?", input_html: { data: { controller: "star-rating" } } %>
-    <%= f.input :expertise, collection: (1..5), label: false, prompt: "How would you rate the #{@reviewee_user.username.capitalize}'s expertise on this topic?", input_html: { data: { controller: "star-rating" } } %>
-    <%= f.input :behavior, collection: (1..5), label: false, prompt: "How would you rate the #{@reviewee_user.username.capitalize}'s behavior?", input_html: { data: { controller: "star-rating" } } %>
-    <%= f.button :submit, "Submit Review", class: "btn btn-primary" %>
-<% end %>
+  <div class="row d-flex justify-content-center text-center">
+    <div class="col-10">
+      <h4 class="mb-4 mt-4">
+        Leave a Review about your tchat with <%= @reviewee_user.username.capitalize %>
+      </h4>
+      <%= simple_form_for [@reviewee_user_topic, @review] do |f| %>
+        <%= f.input :content, label: false, placeholder: "What did you think of this topic?", input_html: { rows: 4 } %>
+        <%= f.input :rating, collection: (1..5), required: :false, label: false, prompt: "How would you rate this topic?", input_html: { data: { controller: "star-rating" } } %>
+        <%= f.input :red_flag, input_html: { data: { controller: "star-rating" } }, label_html: { class: 'text-white' } %>
+        <%= f.input :interesting, collection: (1..5), label: false, prompt: "How would you rate the quality of #{@reviewee_user.username.capitalize}'s content?", input_html: { data: { controller: "star-rating" } } %>
+        <%= f.input :fun, collection: (1..5), label: false, prompt: "How would you rate the #{@reviewee_user.username.capitalize}'s expertise on this topic?", input_html: { data: { controller: "star-rating" } } %>
+        <%= f.input :nice, collection: (1..5), label: false, prompt: "How would you rate the #{@reviewee_user.username.capitalize}'s behavior?", input_html: { data: { controller: "star-rating" } } %>
+        <%= f.button :submit, "Submit Review", class: "btn btn-secondary rounded-2" %>
+      <% end %>
+    </div>
+  </div>
 </div>
