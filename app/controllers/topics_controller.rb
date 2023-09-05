@@ -11,7 +11,6 @@ class TopicsController < ApplicationController
     @user_themes_topics = @topics.joins(:theme).where(themes: { id: current_user.themes.pluck(:id) })
     @other_themes_topics = @topics.where.not(id: @user_themes_topics.pluck(:id))
     @available_topics = @user_themes_topics + @other_themes_topics
-    @joined_topics = current_user.joined_topics
   end
 
   def chatrooms
