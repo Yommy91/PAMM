@@ -12,6 +12,7 @@
       </div>
     <% end %>
   </div>
+  <div>
   <% if @current_user_topic.status == true %>
     <%= simple_form_for [@topic, @message],
       html: { data: { action: "turbo:submit-end->topic-subscription#resetForm" }, class: "d-flex" } do |f|
@@ -28,4 +29,5 @@
       <% end %>
     <% end %>
   <% end %>
+  </div>
 </div>

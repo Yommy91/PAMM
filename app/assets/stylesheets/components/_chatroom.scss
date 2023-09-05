@@ -13,7 +13,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  background-color: #1A1A1A;
   border-radius: 10px;
 }
 
@@ -30,6 +29,7 @@
   padding: 10px;
   background-color: #1A1A1A;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 #message_content {
@@ -47,6 +47,6 @@
   background-color: #000000;
   color: rgb(245, 235, 235);
   cursor: pointer;
-  border:solid;
+  border: solid;
   height: 57px;
 }
