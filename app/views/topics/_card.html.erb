@@ -1,0 +1,12 @@
+<div class="card-topic" data-bs-toggle="modal" data-bs-target="#modal<%= topic.id %>">
+  <div class="card-topic-info">
+    <div class="card-topic-info-name">
+      <div class="bg-success rounded-5 d-inline-block px-3 pt-1 mb-3"><%= topic.theme.name %></div>
+      <p><%= topic.name %></p>
+    </div>
+  </div>
+  <div class="card-topic-user">
+    <%= render "shared/avatar_with_badge", user: topic.user, size: :small %>
+    <p class="mt-2 mb-0"><%= topic.user.username.capitalize %></p>
+  </div>
+</div>

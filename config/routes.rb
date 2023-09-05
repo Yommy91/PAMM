@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :themes, only: [:index] do
     resources :topics, only: [:index]
   end
+  get :chatrooms, to: "topics#chatrooms"
   resources :topics, only: [:index,:show, :new, :create] do
     resources :messages, only: [:create]
     resources :user_topics, only: [:create]

@@ -1,15 +1,20 @@
 class TopicsController < ApplicationController
   def index
-    if params[:query].present?
-      topics = Topic.search(params[:query])
-    else
-      topics = Topic.all
-    end
-    topics = topics.select { |topic| topic.user_topics.count == 1 }
-    topics = Topic.where(id: topics.map { |topic| topic.id }) # .map(&:id)
-    @user_themes_topics = topics.joins(:theme).where(themes: { id: current_user.themes.pluck(:id) })
-    @other_themes_topics = topics.where.not(id: @user_themes_topics.pluck(:id))
-    @joined_topics = current_user.joined_topics
+    @topics = if params[:query].present?
+                Topic.search(params[:query])
+              else
+                Topic.all
+              end
+    @topics = @topics.select { |topic| topic.user_topics.count == 1 }
+    @topics = Topic.where(id: @topics.map(&:id))
+
+    @user_themes_topics = @topics.joins(:theme).where(themes: { id: current_user.themes.pluck(:id) })
+    @other_themes_topics = @topics.where.not(id: @user_themes_topics.pluck(:id))
+    @available_topics = @user_themes_topics + @other_themes_topics
+  end
+
+  def chatrooms
+    @topics = current_user.joined_topics
   end
 
   def new
