@@ -2,18 +2,18 @@
   <% if user_signed_in? %>
     <ul>
       <li>
-        <%= link_to "#", class: "navbar-brand" do %>
+        <%= link_to user_path(current_user), class: "navbar-brand" do %>
           <i class="fa-regular fa-user"></i>
         <% end %>
       </li>
 
       <li>
-        <%= link_to "#", class: "navbar-brand" do %>
+        <%= link_to new_topic_path, class: "navbar-brand" do %>
           <i class="fa-solid fa-plus"></i>
         <% end %>
       </li>
       <li>
-        <%= link_to "#", class: "navbar-brand" do %>
+        <%= link_to topics_path, class: "navbar-brand" do %>
          <i class="fa-solid fa-magnifying-glass"></i>
         <% end %>
       </li>
