@@ -3,10 +3,10 @@
     <%= render "topics/card", topic: @topic %>
   </div>
   <%= render "topics/chatroom" %>
-  <div class="d-flex">
-    <%= link_to "Review", new_user_topic_review_path(@reviewee_user_topic), class: "btn btn-outline-light rounded-4" %>
+  <div class="d-flex px-4">
+    <%= link_to "Review", new_user_topic_review_path(@reviewee_user_topic), class: "flex-grow-1 btn btn-outline-light rounded-4" %>
     <% if @current_user_topic.status == true %>
-      <%= link_to "Leave", user_topic_path(@current_user_topic), data: { turbo_method: :patch }, class: "btn btn-light rounded-4" %>
+      <%= link_to "Leave", user_topic_path(@current_user_topic), data: { turbo_method: :patch }, class: "flex-grow-1 btn btn-light rounded-4" %>
     <% end %>
   </div>
 </div>
