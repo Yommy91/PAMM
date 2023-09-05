@@ -1,50 +1,10 @@
-
 <div class="container">
-  <div class="reviews-section">
-    <%= link_to  "Back", topics_path(@topic), class: "btn btn-outline-light rounded-5" %>
-    <h3><%= @topic.name %></h3>
-    <% unless @topic.users.include?(current_user) %>
-      <p><%#= @topic.description %></p>
-      <%# <p>Expertise:@topic.expertise.times do %>
-        <%# <i class="fa-solid fa-star modal-color"></i> %>
-      <%# end %></p>
-      <%# <p>Quality:@topic.quality.times do %>
-        <%# <i class="fa-solid fa-star modal-color"></i> %>
-      <%# end %></p>
-      <%# <p>Behavior:@topic.behavior.times do %>
-        <%# <i class="fa-solid fa-star modal-color"></i> %>
-      <%# end %></p>
-      <br><br>
-      <div class="">
-        <%= link_to  "Join chat", topic_user_topics_path(@topic), data: { turbo_method: :post }, class: "btn btn-outline-light rounded-5" %>
-      </div>
-      <br><br>
-      <div class="reviews-section">
-        <h3 class="text-center">Reviews</h3>
-
-        <% @topic.reviews.each do |review| %>
-          <div>
-            <%# <%= image_tag("avatars/#{review.user.avatar}", class: 'ms-1 avatar-large', alt: 'avatar') %>
-            <% review.rating.times do  %>
-              <i class="fa-solid fa-star" style="color: black;"></i>
-            <% end %>
-            <p><%= review.content %></p><small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-          </div>
-          <hr>
-        <% end %>
-        <br><br>
-        </div>
-          <h3 class="text-center">Add a Review</h3>
-          <%#= link_to "Add review", new_user_topic_review_path(@reviewee_user_topic) %>
-        </div>
-      </div>
-
-    <% else %>
-      <% if @current_user_topic.status == true %>
-        <%= link_to "Leave", user_topic_path(@current_user_topic), data: { turbo_method: :patch }, class: "btn btn-outline-light rounded-5" %>
-      <% end %>
-      <%= render "topics/chatroom" %>
-    <% end %>
-
+  <div class="mt-3">
+    <%= render "topics/card", topic: @topic %>
   </div>
+  <div class="d-flex mt-3">
+    <%= link_to "back", chatrooms_path, class: "btn btn-warning rounded-4 w-50" %>
+      <%= link_to "Leave", user_topic_path(@current_user_topic), data: { turbo_method: :patch }, class: "btn btn-light rounded-4 w-50" %>
+  </div>
+  <%= render "topics/chatroom" %>
 </div>
