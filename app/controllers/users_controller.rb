@@ -8,9 +8,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    @average_interesting_note = @user.reviews_as_reviewee.average(:interesting)
-    @average_fun_note = @user.reviews_as_reviewee.average(:fun)
-    @average_nice_note = @user.reviews_as_reviewee.average(:nice)
+    @average_interesting_note = @user.reviews_as_reviewee.average(:interesting).to_i
+    @average_fun_note = @user.reviews_as_reviewee.average(:fun).to_i
+    @average_nice_note = @user.reviews_as_reviewee.average(:nice).to_i
   end
 
   def update_avatar

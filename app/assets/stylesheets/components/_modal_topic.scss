@@ -1,12 +1,14 @@
 .modal-style{
   overflow: hidden;
-  background: black;
+  background: #000000;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 30px;
+  border: 1px solid;
+  border-color: white;
   margin-bottom: 15px;
-  color: #FFBB5C;
+  color: white;
   padding-top: 20px;
 }
 .modal-color{

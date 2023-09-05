@@ -22,16 +22,15 @@
   border: white 1px solid;
 }
 
-.avatar-with-badge{
+.avatar-with-badge {
   position: relative;
+  display: inline-block;
   img{
     margin: 0
   };
-
-
   i{
     position: absolute;
-    bottom: -10px;
+    bottom: -5px;
     right: -10px;
     background: grey;
     width: 2rem;
@@ -42,5 +41,17 @@
     border-radius: 4px;
     font-size: 1.5rem;
   }
+  &.small {
+    img {
+      width: 45px;
+    }
+    i {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
 }
 
+.theme{
+  font-size: 20px;
+}

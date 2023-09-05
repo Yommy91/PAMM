@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="text-center">
+    <h1 class="mt-3 mb-2">Your current chatrooms</h1>
+    <div class="mb-5">
+      <%= simple_form_for :truc, url: chatrooms_path, method: :get, html: { class: "chatrooms-filter" } do |f| %>
+        <%= f.input :topic_type,
+          label: false,
+          collection: ['Active', 'Old'],
+          selected: 'Active',
+          include_hidden: false,
+          include_blank: false,
+          input_html: {
+            class: "rounded-pill text-white"
+          } %>
+      <% end %>
+    </div>
+    <% if @topics.present? %>
+      <% @topics.each do |topic| %>
+        <div class="mb-3 chatroom-topic-container">
+          <%= link_to "", topic_path(topic) %>
+          <div class="head-card">
+            <small><em class="text-muted"><%= distance_of_time_in_words_to_now(topic.created_at) %> ago</em></small>
+            <small><em class="text-muted"><%= topic.messages.count %> messages</em></small>
+          </div>
+          <%= render "topics/card", topic: topic %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>You haven't any active topic right now.</p>
+    <% end %>
+    </div>
+  </div>
+</div>
