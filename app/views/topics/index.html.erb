@@ -9,14 +9,14 @@
             class: "form-control rounded-4",
             placeholder: "Start Your Search" %>
             <div>
-              <%= submit_tag "Search", name: "", class: "btn btn-primary rounded-4 ms-2"%>
+              <%= submit_tag "Search", name: "", class: "btn btn-search border border-light rounded-4 ms-2"%>
             </div>
         <% end %>
       </div>
         <% if @joined_topics.present? %>
           <% @joined_topics.each do |topic| %>
             <div class="col-12" >
-              <div class="card-topic" data-bs-toggle="modal" data-bs-target="#modal<%= topic.id %>">
+              <div class="card-topic">
                 <div class="card-topic-info">
                   <div class="card-topic-info-name">
                     <button type="button" class="btn btn-success rounded-5"><%= topic.theme.name %></button>
@@ -32,12 +32,12 @@
                     <%= image_tag("avatars/#{avatar.sample}", class: 'avatar-large', alt: 'avatar') %>
                     <i class="fa-solid fa-chess-pawn icon-50"></i>
                   </div>
-                    <p class="mb-0"><%= topic.user.username %></p>
+                    <p><%= topic.user.username %></p>
                   </div>
                 </div>
-                <%= link_to "#", class: "navbar-brand" do %>
-                  <i class="fa-regular fa-comments btn btn-warning mb-3">  JOIN</i>
-                <% end %>
+                <div class="col-md-12 text-center" >
+                    <i class="fa-regular fa-comments btn btn-warning mb-3 rounded-3" data-bs-toggle="modal" data-bs-target="#modal<%= topic.id %>">  JOIN</i>
+                </div>
               </div>
             </div>
             <%= render partial: 'topics/modal', locals: { topic: topic } %>
