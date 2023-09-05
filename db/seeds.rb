@@ -350,6 +350,216 @@ topic11 = Topic.create!(
   theme: Theme.find_by(name: "Dancing")
 )
 
+# topics proposal ali starting here :
+
+topic12 = Topic.create!(
+  name: "If animals could talk, which would be the rudest?"
+  description:"Anamals can be incredibly rude, but which one is the rudest of them all?",
+  user: User.find_by(email: "user11@example.com"),
+  theme: Theme.find_by(name: "Nature")
+)
+
+topic13 = Topic.create!(
+  name: "Is cereal soup?"
+  description: "Can we consider cereal as a soup? can it be eaten hot or cold? Imagine a world where cereal is soup, what would it be like?",
+  user: User.find_by(email: "user12@example.com"),
+  theme: Theme.find_by(name: "Food")
+)
+
+topic14 = Topic.create!(
+  name: "How many chickens would it take to kill an elephant?"
+  description: "Chickens are small, but they can be deadly. How many chickens would it take to kill an elephant?",
+  user: User.find_by(email: "user13@example.com"),
+  theme: Theme.find_by(name: "Life")
+)
+
+topic15 = Topic.create!(
+  name: "What sport would be the funniest to add a mandatory amount of alcohol to?",
+  description: "Imagine a world where every sport is played with a mandatory amount of alcohol. Which sport would be the funniest?",
+  user: User.find_by(email: "user14@example.com"),
+  theme: Theme.find_by(name: "Sports")
+)
+
+topic16 = Topic.create!(
+  name: "What is the sexiest and least sexy name?"
+  description: "For you what is the sexiest and least sexy name for a person ? Feel free to explain why. Are there names that are sexy in one language but not in another?",
+  user: User.find_by(email: "user15@example.com"),
+  theme: Theme.find_by(name: "Personal Growth")
+)
+
+topic17 = Topic.create!(
+  name: "What secret conspiracy would you like to start?"
+  description: "If you could start a secret conspiracy, what would it be about? What would be the goal of your conspiracy?",
+  user: User.find_by(email: "user16@example.com"),
+  theme: Theme.find_by(name: "Politics")
+)
+
+topic18 = Topic.create!(
+  name: "What’s invisible but you wish people could see?"
+  description: "If you could make something invisible visible, what would it be? Why?",
+  user: User.find_by(email: "user17@example.com"),
+  theme: Theme.find_by(name: "Personal Growth")
+)
+
+topic19 = Topic.create!(
+  name: "What’s the weirdest smell you have ever smelled?"
+  description: "What did it smell like? Where did you smell it? Why was it weird? Give examples.",
+  user: User.find_by(email: "user18@example.com"),
+  theme: Theme.find_by(name: "Life")
+)
+
+topic20 = Topic.create!(
+  name: "What’s the best Wi-Fi name you’ve seen?"
+  description: "What was the name? Where did you see it? Why was it the best? Give creative examples.",
+  user: User.find_by(email: "user19@example.com"),
+  theme: Theme.find_by(name: "Tech")
+)
+
+topic21 = Topic.create!(
+  name: "What’s the most ridiculous fact you know?"
+  description: "Why is it ridiculous? Where did you learn it? Do you know other ridiculous facts?",
+  user: User.find_by(email: "user20@example.com"),
+  theme: Theme.find_by(name: "Life")
+)
+
+topic22 = Topic.create!(
+  name: "Is a hotdog a sandwich? Why or why not?"
+  description: "Is a hotdog a sandwich? Why or why not? What is the definition of a sandwich?",
+  user: User.find_by(email: "user21@example.com"),
+  theme: Theme.find_by(name: "Food")
+)
+
+topic23 = Topic.create!(
+  name: "What is something that everyone looks stupid doing?"
+  description: "Why do they look stupid doing it? Have you ever done it? Give examples.",
+  user: User.find_by(email: "user22@example.com"),
+  theme: Theme.find_by(name: "Life")
+)
+
+topic24 = Topic.create!(
+  name: "What is the funniest joke you know by heart?"
+  description: "What is the joke? Why is it funny? Where did you learn it? Give examples.",
+  user: User.find_by(email: "user23@example.com"),
+  theme: Theme.find_by(name: "Entertainment")
+)
+
+topic25 = Topic.create!(
+  name: "In 40 years, what will people be nostalgic for?"
+  description: "Why will they be nostalgic for it? What will they miss about it? list yours.",
+  user: User.find_by(email: "user24@example.com"),
+  theme: Theme.find_by(name: "Life")
+)
+
+topic26 = Topic.create!(
+  name: "What are the unwritten rules of where you work?"
+  description: "What are the unwritten rules of your school? What are the unwritten rules of your family? What are the unwritten rules of your friend group?",
+  user: User.find_by(email: "user25@example.com"),
+  theme: Theme.find_by(name: "Business")
+)
+
+topic27 = Topic.create!(
+  name: "How do you feel about putting pineapple on pizza?"
+  description: "Do you like pineapple on pizza? Why or why not? What other toppings do you like on pizza?",
+  user: User.find_by(email: "user26@example.com"),
+  theme: Theme.find_by(name: "Food")
+)
+
+topic28 = Topic.create!(
+  name: "What part of a kid’s movie completely scarred you?"
+  description: "What movie was it? How old were you when you saw it? Why did it scar you?",
+  user: User.find_by(email: "user27@example.com"),
+  theme: Theme.find_by(name: "Movies")
+)
+
+topic29 = Topic.create!(
+  name: "What kind of cult would you like to start?"
+  description: "What would be the goal of your cult? What would be the rules of your cult? What would you call your cult?",
+  user: User.find_by(email: "user28@example.com"),
+  theme: Theme.find_by(name: "Religion")
+)
+
+topic30 = Topic.create!(
+  name: "Toilet paper, over or under?"
+  description: "Why? What is the best way to put toilet paper on the roll? Do you have other ideas for the best way to put toilet paper on the roll?",
+  user: User.find_by(email: "user29@example.com"),
+  theme: Theme.find_by(name: "Life")
+)
+
+topic31 = Topic.create!(
+  name: "Where is the strangest place you’ve urinated or defecated?"
+  description: "Why did you do it there? What happened? How did you feel? Was it an emergency?",
+  user: User.find_by(email: "user30@example.com"),
+  theme: Theme.find_by(name: "Life")
+)
+
+topic32 = Topic.create!(
+  name: "What’s the best inside joke you’ve been a part of?"
+  description: "What was the joke? Who was a part of it? Why was it funny? If you could explain the joke to someone, how would you explain it?",
+  user: User.find_by(email: "user31@example.com"),
+  theme: Theme.find_by(name: "Life")
+)
+
+topic33 = Topic.create!(
+  name: "In one sentence, how would you sum up the internet?"
+  description: "What is the internet? Feel free to be creative and honest about your feelings and experiences with the internet.",
+  user: User.find_by(email: "user32@example.com"),
+  theme: Theme.find_by(name: "Tech")
+)
+
+topic34 = Topic.create!(
+  name: "What is the most embarrassing thing about kim karadashian?"
+  description: "Why is it embarrassing? What is the most embarrassing thing about you? What is the most embarrassing thing about your best friend?",
+  user: User.find_by(email: "user33@example.com"),
+  theme: Theme.find_by(name: "Celebrities")
+)
+
+topic35 = Topic.create!(
+  name: "Which body part do you wish you could detach and why?"
+  description: "What would you do with it? What would you do without it? Why would you detach it?",
+  user: User.find_by(email: "user34@example.com"),
+  theme: Theme.find_by(name: "Health")
+)
+
+topic36 = Topic.create!(
+  name: "What used to be considered trashy but now is very classy?"
+  description: "Why was it considered trashy? Why is it now considered classy? What other things are considered trashy but are actually classy?",
+  user: User.find_by(email: "user35@example.com"),
+  theme: Theme.find_by(name: "Fashion")
+)
+
+topic37 = Topic.create!(
+  name: "What’s the weirdest song lyric you’ve ever heard?"
+  description: "What song was it? What was the lyric? Why was it weird? What other weird song lyrics do you know?",
+  user: User.find_by(email: "user36@example.com"),
+  theme: Theme.find_by(name: "Music")
+)
+
+topic38 = Topic.create!(
+  name: "What’s the weirdest thing an influencer has done at his or her wedding?"
+  description: "What did they do? Why was it weird? What other weird things have influencers done?",
+  user: User.find_by(email: "user37@example.com"),
+  theme: Theme.find_by(name: "Influencers")
+)
+
+topic39 = Topic.create!(
+  name: "What mythical creature would improve the world most if it existed?"
+  description: "What would it do? How would it improve the world? Why would it improve the world? Did it exit in religious texts?",
+  user: User.find_by(email: "user38@example.com"),
+  theme: Theme.find_by(name: "Religion")
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 puts "Creating user topics..."
 user_topic1 = UserTopic.create!(user: User.first, topic: Topic.first, status: true)
