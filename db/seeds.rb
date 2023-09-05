@@ -427,3 +427,7 @@ review3 = Review.create(
 )
 
 puts "Finished seeding."
+
+User.all.each do |user|
+  UserGrade.create!(user: user, name: UserGrade::GRADES.keys.sample)
+end
