@@ -44,7 +44,7 @@
   <% @user.reviews_as_reviewee.each do |review| %>
     <div class="d-flex">
       <% if review.reviewer.avatar %>
-        <%= image_tag review.reviewer.avatar %>
+        <%= image_tag "avatars/#{review.reviewer.avatar}" %>
       <% else %>
         <p>Aucun avatar</p>
       <% end %>
