@@ -1,6 +1,10 @@
 .review-card{
-  display: flex;
+  display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 1rem;
-  justify-items: center;
+}
+
+.rating{
+  text-align: center;
+  font-size: 25px;
 }

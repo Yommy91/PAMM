@@ -54,9 +54,12 @@ theme101 = Theme.create(name: "Startups")
 theme102 = Theme.create(name: "Coding")
 
 puts "Creating users..."
-user1 = User.create(email: "user1@example.com", password: "password", username: "bob")
+user1 = User.create(email: "user1@example.com", password: "password", username: "bob", avatar: "avatar-1.png")
+#avatar_image = File.join(Rails.root, 'app', 'assets', 'images', 'avatar-1.png')
+#user1.avatar.attach(io: File.open(avatar_image), filename: "#{user1.username}.png", content_type: "image/png")
 Theme.all.shuffle.first(5).each do |theme|
   User.last.user_themes.create(theme: theme)
+
 end
 user2 = User.create(email: "user2@example.com", password: "password", username: "john")
 Theme.all.shuffle.first(5).each do |theme|
