@@ -15,7 +15,7 @@
             class: "form-control rounded-4",
             placeholder: "Start Your Search" %>
             <div>
-              <%= submit_tag "Search", name: "", class: "btn btn-primary rounded-4 ms-2"%>
+              <%= submit_tag "Search", name: "", class: "btn btn-search border border-light rounded-4 ms-2"%>
             </div>
         <% end %>
       <%= simple_form_for current_user, html: { data: { controller: 'themes' }} do |f| %>
