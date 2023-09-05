@@ -19,7 +19,9 @@
                   params[:query],
                   class: "form-control",
                   placeholder: "Start Your Search 🔍" %>
-                <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+                <%= button_tag , class: "btn btn-primary" do %>
+                   <i class="fa-solid fa-eye"></i>
+                <% end %>
               <% end %>
             <%# end %>
           </div>
