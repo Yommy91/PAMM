@@ -14,6 +14,10 @@ class TopicsController < ApplicationController
     @joined_topics = current_user.joined_topics
   end
 
+  def chatrooms
+    @topics = current_user.joined_topics
+  end
+
   def new
     @topic = Topic.new
   end

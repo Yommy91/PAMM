@@ -15,7 +15,7 @@
     <% if @available_topics.present? %>
       <% @available_topics.each do |topic| %>
         <%= render "topics/card", topic: topic %>
-        <%= link_to "#", class: "styled-button" do %>
+        <%= link_to topic_user_topics_path(topic), data: { turbo_method: :post }, class: "styled-button" do %>
           <i class="fa-regular fa-comments">  JOIN</i>
         <% end %>
         <%= render partial: 'topics/modal', locals: { topic: topic } %>
