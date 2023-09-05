@@ -503,6 +503,110 @@ topic39 = Topic.create!(
   theme: Theme.find_by(name: "Religion")
 )
 
+topic40 = Topic.create!(
+  name: "What is be the absolute worst polititian name you can imagine?",
+  description: "Which party would he or she belong to? What would be his or her political views? What would be his or her political program?",
+  user: User.find_by(email: "user39@example.com"),
+  theme: Theme.find_by(name: "Politics")
+)
+
+topic41 = Topic.create!(
+  name: "What would be the worst thing for the government to make illegal?",
+  description: "Why would it be bad? What would happen if it was illegal? What would be the consequences?",
+  user: User.find_by(email: "user40@example.com"),
+  theme: Theme.find_by(name: "Politics")
+)
+
+topic42 = Topic.create!(
+  name: "What are some fun and interesting alternatives to war that countries could settle their differences with?",
+  description: "Why would it be a good alternative? What would be the consequences? What would be the rules?",
+  user: User.find_by(email: "user2@example.com"),
+  theme: Theme.find_by(name: "Politics")
+)
+
+topic43 = Topic.create!(
+  name: "If a politician was a vegetable, what vegetable would he or she be?",
+  description: "Would he or she be a good vegetable or a bad vegetable? Why? What would be the vegetable’s political program?",
+  user: User.find_by(email: "user3@example.com"),
+  theme: Theme.find_by(name: "Politics")
+)
+
+topic44 = Topic.create!(
+  name: "What would be the nicknames of french politicians if they were rappers?",
+  description: "What would be their rap names? What would be their rap songs? What would be their rap albums?",
+  user: User.find_by(email: "user4@example.com"),
+  theme: Theme.find_by(name: "Politics")
+)
+
+topic45 = Topic.create!(
+  name: "What is the weirdest outfit you’ve seen on a basketball player?",
+  description: "What was the outfit? Who was the player? Why was it weird? What other weird outfits have you seen?",
+  user: User.find_by(email: "user5@example.com"),
+  theme: Theme.find_by(name: "Politics")
+)
+
+topic46 = Topic.create!(
+  name: "If your career was a video game, what would some of the cheat codes be?",
+  description: "What will you do to get ahead? What will you do to get out of a sticky situation? What will you do to get a promotion?",
+  user: User.find_by(email: "user6@example.com"),
+  theme: Theme.find_by(name: "Careers")
+)
+
+topic47 = Topic.create!(
+  name: "What would be the creepiest thing you could say to your manager or boss?",
+  description: "What would you say? Why would you say it? What would you do if they said it back to you?",
+  user: User.find_by(email: "user7@example.com"),
+  theme: Theme.find_by(name: "Careers")
+)
+
+topic48 = Topic.create!(
+  name: "What would the office be like if it was filled with male and female copies of you?",
+  description: "it would be a dream or a nightmare? What would you do? What would you talk about?",
+  user: User.find_by(email: "user8@example.com"),
+  theme: Theme.find_by(name: "Careers")
+)
+
+topic49 = Topic.create!(
+  name: "if you were a celebrity, What are some things that are okay to occasionally do but definitely not okay to do every day?",
+  description: " will you became excentric or stick to your roots? give some examples!",
+  user: User.find_by(email: "user9@example.com"),
+  theme: Theme.find_by(name: "Celebrities")
+)
+
+topic50 = Topic.create!(
+  name: "If you were arrested with no explanation, what would your colleagues assume you had done?",
+  description: "What would they think you had done? Why would they think that? What would you actually have done?",
+  user: User.find_by(email: "user10@example.com"),
+  theme: Theme.find_by(name: "Careers")
+)
+
+topic51 = Topic.create!(
+  name: "You’re a mad entrepreneur, what would you run as a business if money and ethics weren’t an issue?",
+  description: "will it be a business that is legal? will it be useful for society or just for you?",
+  user: User.find_by(email: "user11@example.com"),
+  theme: Theme.find_by(name: "Entrepreneurship")
+)
+
+topic52 = Topic.create!(
+  name: "If you were transported 400 years into the past in the vatican, with no clothes or anything else, how would you prove that you were from the future?",
+  description: "What would you do? What would you say? How would you prove it? being atheist is not an option",
+  user: User.find_by(email: "user12@example.com"),
+  theme: Theme.find_by(name: "Religion")
+)
+
+topic53 = Topic.create!(
+  name: "Blame your dog for things.",
+  description: "When you do not find a proof of your innocence, blame your dog for things.",
+  user: User.find_by(email: "user13@example.com"),
+  theme: Theme.find_by(name: "Life")
+)
+
+topic54 = Topic.create!(
+  name: "The reason grass appears greener on the other side is because it is probably fake.",
+  description: "We envy others because we can't see their flaws. We only see what they want us to see.",
+  user: User.find_by(email: "user14@example.com"),
+  theme: Theme.find_by(name: "Personal Growth")
+)
 
 puts "Creating user_topics..."
 topics_with_2_participants = []
@@ -529,6 +633,97 @@ review_contents = [
   "Very knowledgeable about the topic.",
   "Great to talk to.",
   "Very interesting.",
+  "Very funny subject, did not expect that. I will definitely come back to this topic.",
+  "Very interesting topic, Could not stop thinking about all the possible answers.",
+  "Had a great time talking about this topic. I can't wait to see what other people think about it.",
+  "I really enjoyed this topic. I will definitely add some topics of my own.",
+  "So much fun talking to you. I will follow you to see what other topics you add.",
+  "love this app so much. I will definitely recommend it to my friends.",
+  "So nice to talk to you. I will definitely come back to this topic.",
+  "So spontaneous and fun. i highly recommend this topic.",
+  "The subject was hilarious. it is easy to talk about it.",
+  "The conversation was natural. I did not feel like I was talking to a stranger.",
+  "It was really weird to talk about this topic. I did not expect that. I really enjoyed it.",
+  "It is not commun to talk about it so freely. Thank you for your time.",
+  "I did not see the time passing. It was really cool to talk to you.",
+  "So creative and fun. I will definitely come back to this topic.",
+  "First time I talk about this topic. It was really interesting.",
+  "I did not know what to expect. I was pleasantly surprised.",
+  "Talking to a stranger about this topic was new to me. I really enjoyed it.",
+  "I did not expect to have a serious conversation about this topic. so surprising.",
+  "What a great time. I love the app and will definitely come back to it.",
+  "Pleasant conversation. It gave me a lot to think about.",
+  "Weird topic but so much fun to talk about it.",
+  "Unexpected topic. I liked it a lot.",
+  "So releaving to talk freely about that withou being judged.",
+  "This app allows me to talk about things I would not talk about with my friends.",
+  "Chatting about that was unexpected. I suprised myself.",
+  "Freedom of speech is so important. I am glad I can talk about this topic.",
+  "I felt so comfortable talking to you. Thank you again.",
+  "So many cool topics out there. This one was one of them.",
+  "This person is crazy on a good way. I laughed so much.",
+  "I felt like I was talking to a friend. what a great app.",
+  "I felt confortable talking to you. Great moment.",
+  "The boundaries are sometimes hard to define. I am glad I can talk about this topic.",
+  "First time I can really talk and be myself. I love this app.",
+  "Pamm is a great app. I will definitely recommend it to my friends.",
+  "Talking with people from all over the world is so cool. I love this app.",
+  "Feeling understood is so important. Thank you.",
+  "Sharing commun interests is so cool. It was a great conversation.",
+  "I did not see the time passing. so many interesting topics.",
+  "Getting right away to the point is so cool. I love this app.",
+  "I switched topics so many times. It was so much fun.",
+  "The conversation moved from one topic to another so smoothly.",
+  "What can i say? I love this app.",
+  "Suprised and happy to share my opinion. Thank you.",
+  "Having the same interests is so cool. everyone should try this app.",
+  "Did not see that coming. It was a great conversation.",
+  "What happens on Pamm stays on Pamm. I love this app.",
+  "How did you come up with this topic? Could not stop laughing.",
+  "Made me think about things I would not think about. Thank you.",
+  "what happend there? I did not expect that. I love this app.",
+  "what a great time. let's catch up again.",
+  "I had the feeling I was talking to a friend. Thank you.",
+  "Was it me or the topic? I had a great time.",
+  "The topic was ok but the conversation was great.",
+  "I will not forget this conversation. Thank you.",
+  "A delicious conversation. I highly recommend it.",
+  "Great example of a great conversation. I love this app.",
+  "It was brave of you to talk about this topic. I really enjoyed it.",
+  "Sharing is scary but so rewarding. Thank you.",
+  "I will feel unconfortable talking about this topic with my friends. I am glad I can talk about it here.",
+  "I never talk about that. It was so cool to do it.",
+  "i avoided this topic for so long. I am glad I could express myself.",
+  "Such a humble but interesting point of view. Thank you.",
+  "Yes, we can laught about that. It was nice to talk to you.",
+  "Hell yeah! I love this app. I will definitely come back to it.",
+  "5 stars for this conversation. Well done.",
+  "Let me tell you, I had a great time. Thank you.",
+  "Strange point of view but great to debate about it.",
+  "Is it normal to feel at ease like that? I love this app.",
+  "All you need is Pamm. I love this app.",
+  "Great conversation. Such a burst of energy.",
+  "We could not stop talking. Very surprising.",
+  "My first time on Pamm. what a great experience.",
+  "Having fun with a chat? Well i must confess, I did.",
+  "I chose a this topic and did not expect to run a conversation right away. I love this app.",
+  "Why paying for a therapist when you can talk to strangers as crazy as you? I love this app.",
+  "At the beginning I was not sure about this app. Now I am addicted.",
+  "I do not use that much apps but this one is a must have.",
+  "I don't like social media but this app is different. I love it.",
+  "So nice to talk without non stop advertising.",
+  "What an accessible app. The community is great.",
+  "I had the best time. It was refreshing.",
+  "Thank you for sharing your opinion that way. I really enjoyed the conversation.",
+  "I'm delighted to have found this app. I will definitely come back to it.",
+  "Did not imagine to have profound conversations on this app. I was wrong.",
+  "I feel like I can talk about anything with you. You never judge. Thank you.",
+  "Did we really ended up talking about squirrels at the end ? Cool moment.",
+  "Thank you for your trust. I will not forget this conversation.",
+  "Knock-Knock ! Who's there? Pamm. Pamm who? Pamm is the best app ever.",
+  "My favourite thing about this topic is that I can talk about it exactly the way I want.",
+  "I highly recommend you. You are a great listener.",
+  "Time flies when you are having fun. I enjoyed this conversation."
 ]
 
 topics_with_2_participants.each do |topic|
