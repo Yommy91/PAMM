@@ -24,6 +24,11 @@
     top: -15px;
   }
 }
+#topics-show {
+  .card-topic {
+    border: none;
+  }
+}
 
 .card-topic-info{
   padding: 10px
@@ -78,5 +83,9 @@
     right: 0;
     left: 0;
     z-index: 10;
+  }
+  .card-topic-user {
+    position: relative;
+    z-index: 20;
   }
 }

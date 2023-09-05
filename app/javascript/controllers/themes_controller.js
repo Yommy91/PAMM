@@ -5,8 +5,7 @@ export default class extends Controller {
   static targets = ['checkbox']
 
   connect() {
-    console.log(`Hi from ${this.identifier}`)
-    console.log(this.checkboxTargets)
+  
   }
 
   shoot() {

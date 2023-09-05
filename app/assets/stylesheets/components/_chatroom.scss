@@ -7,7 +7,7 @@
 }
 
 .chat-container {
-  height: 100vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -48,4 +48,8 @@
   cursor: pointer;
   border: solid;
   height: 57px;
+}
+
+.message_content {
+  margin-bottom: 0 !important;
 }

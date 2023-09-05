@@ -1,40 +1,30 @@
-<div class="container">
-  <div class="row">
-    <div class="text-center col-12">
-      <%# <div>
-        <input type="checkbox" id="Skip">
-        <label for="Skip">Skip</label>
-      </div> %>
-      <div>
-        <h1 class="justify-center text-white">Choose 5 themes</h1>
-        <h1 class="justify-center text-white">you enjoy talking about</h2>
-      </div>
-      <%= form_with url: topics_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control rounded-4",
-            placeholder: "Start Your Search" %>
-            <div>
-              <%= submit_tag "Search", name: "", class: "btn btn-search border border-light rounded-4 ms-2"%>
-            </div>
-        <% end %>
+<div class="container" data-controller="themes-selection">
+  <div class="text-center">
+    <div>
+      <h1 class="justify-center text-white">Choose 5 themes</h1>
+      <h1 class="justify-center text-white">you enjoy talking about</h2>
+    </div>
+      <%= text_field_tag :query,
+        "",
+        class: "form-control rounded-4",
+        placeholder: "Browse themes",
+        data: { action: "keyup->themes-selection#filter"} %>
+
       <%= simple_form_for current_user, html: { data: { controller: 'themes' }} do |f| %>
-      <div class="col">
         <%= f.association :themes,
-        as: :check_boxes,
-        include_blank: false,
-        include_hidden: false,
-        input_html: {
-          class: "theme-selector",
-          data: {
-            themes_target: 'checkbox',
-            action: 'change->themes#shoot'
-          }
-        },
-        item_wrapper_class: "theme-item" %>
-      </div>
+          as: :check_boxes,
+          include_blank: false,
+          include_hidden: false,
+          input_html: {
+            class: "theme-selector",
+            data: {
+              themes_target: 'checkbox',
+              action: 'change->themes#shoot'
+            }
+          },
+          item_wrapper_class: "theme-item" %>
         <div class="text-center">
-        <%= f.button :submit, " Update", class: "btn-lg btn-primary rounded-5 button"  %>
+          <%= f.button :submit, " Update", class: "btn-lg btn-primary rounded-5 button"  %>
         </div>
       <% end %>
     </div>
