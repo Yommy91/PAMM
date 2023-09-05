@@ -221,88 +221,81 @@ end
 puts "Creating topics..."
 
 topic1 = Topic.create!(
-  name: "Kylian Mbappe performance.",
-  description: "Amazing performance of Kylian Mbappe against Lens.",
-  user: User.first,
-  theme: Theme.find_by(name: "Football")
+  name: "Can cats really predict the end of the world?",
+  description: "ChatGPT does the same now and can run a conversation, sorry Kitty.",
+  user: User.find_by(email: "user23@example.com"),
+  theme: Theme.find_by(name: "Startups")
 )
 
 topic2 = Topic.create!(
-  name: "Rugby world cup favourites",
-  description: "France is the favourite for the next world cup.",
-  user: User.second,
-  theme: Theme.find_by(name: "Rugby")
-)
-
-topic3 = Topic.create!(
-  name: "Novak Djokovic is the best tennis player of all time",
-  description: "Djokovic will win the next Championship.",
-  user: User.third,
+  name: "The world of tennis withnesses Astonishing Advances in Bionic Technologies.",
+  description: "Carlos Alcaraz is not a cyborg and recovery from a leg injury is not a miracle.",
+  user: User.find_by(email: "user22@example.com"),
   theme: Theme.find_by(name: "Tennis")
 )
 
+topic3 = Topic.create!(
+  name: "Some people are so fake, that Barbie is starting to get jealous.",
+  description: "Influencers are like pennies, two-faced and worthless.",
+  user: User.find_by(email: "user21@example.com"),
+  theme: Theme.find_by(name: "Influencers")
+)
 
 topic4 = Topic.create!(
-  name: "Le Wagons is the best coding bootcamp in France",
-  description: "Can we become a developer in 9 weeks?",
-  user: User.all.sample,
-  theme: Theme.find_by(name: "Coding")
+  name: "Do influencers expect us to take notes when they tell us what to do?",
+  description: "I don't know about you, but I don't have a pen and paper ready when I'm scrolling through Instagram.",
+  user: User.find_by(email: "user20@example.com"),
+  theme: Theme.find_by(name: "Influencers")
 )
 
 topic5 = Topic.create!(
-  name: "Amazing Talker is best app to learn a new language",
-  description: "Amazing Talker is by far the best to learn german.",
-  user: User.all.sample,
-  theme: Theme.find_by(name: "Tech")
+  name: "Growing old is mandatory but growing up is completely optional.",
+  description: "It is so hard to run a business in Paris with all the taxes and regulations.",
+  user: User.find_by(email: "user19@example.com"),
+  theme: Theme.find_by(name: "Entrepreneurship")
 )
 
 topic6 = Topic.create!(
-  name: "USA will win the world cup",
-  description: "USA has no competition.",
-  user: User.all.sample,
-  theme: Theme.find_by(name: "Basketball")
-)
-
-topic7 = Topic.create!(
-  name: "Fashion is the best industry to work in",
-  description: "Fashion becomes more and more important in our society.",
-  user: User.all.sample,
-  theme: Theme.find_by(name: "Fashion")
-)
-
-topic8 = Topic.create!(
-  name: "Health is our most important asset",
-  description: "It is challenging to stay healthy living in Paris.",
-  user: User.all.sample,
-  theme: Theme.find_by(name: "Health")
-)
-
-topic9 = Topic.create!(
-  name: "How to become a millionaire",
-  description: "the best way to become a millionaire is to invest in the stock market.",
-  user: User.all.sample,
+  name: "Common sense is a flower that does not grow in banks and institutions gardens.",
+  description: "Rates are getting crazy, and the banks are not helping. Institutions are not helping either. What are the alternatives?",
+  user: User.find_by(email: "user18@example.com"),
   theme: Theme.find_by(name: "Finance")
 )
 
-topic10 = Topic.create!(
-  name: "PEPPE Pizza is the best pizza in Paris",
-  description: "Even better than in Napoli.",
-  user: User.all.sample,
-  theme: Theme.find_by(name: "Food")
+topic7 = Topic.create!(
+  name: "Daddy is the boss until Mommy gets home.",
+  description: "Should we accept to share an office with our wife or husband? Isn't it better to keep our professional life and our private life separate?",
+  user: User.find_by(email: "user17@example.com"),
+  theme: Theme.find_by(name: "Personal Growth")
 )
+
+topic8 = Topic.create!(
+  name: "Disney movies are great until they all start singing.",
+  description: "I don't know about you, but I don't want to hear a bunch of animals singing about their problems.",
+  user: User.find_by(email: "user17@example.com"),
+  theme: Theme.find_by(name: "Movies")
+)
+
+topic9 = Topic.create!(
+  name: "Candidates often lie on a first date so that they can secure the second one.",
+  description: "As Didier Deschamps often says, 'It is a question of tactic and technique.'",
+  user: User.find_by(email: "user16@example.com"),
+  theme: Theme.find_by(name: "Careers")
+)
+
+topic10 = Topic.create!(
+  name: "For most entrepreneurs, Money does talk and it usually likes to say ‘bye-bye’.",
+  description: "Should we invest our money in a business or use business angels instead?",
+  user: User.find_by(email: "user15@example.com"),
+  theme: Theme.find_by(name: "Entrepreneurship")
+)
+
 
 topic11 = Topic.create!(
-  name: "Pachanga is the best salsa club in Paris",
-  description: "Cuba Libre!",
-  user: User.all.sample,
-  theme: Theme.find_by(name: "Dancing")
-)
-
-topic12= Topic.create!(
-  name: "Le Wagons is the best coding bootcamp in France",
-  description: "Can we become a developer in 9 weeks?",
-  user: User.find_by(email: "user4@example.com"),
-  theme: Theme.find_by(name: "Coding")
+  name: "In order to understand what life is all about you should hang out with a three year old.",
+  description: "They always say the truth whit no filter. They use vocabulary you never heard before. They are the best teachers in the world.",
+  user: User.find_by(email: "user15@example.com"),
+  theme: Theme.find_by(name: "Personal Growth")
 )
 
 # topics proposal ali starting here :
@@ -607,6 +600,7 @@ topic54 = Topic.create!(
   user: User.find_by(email: "user14@example.com"),
   theme: Theme.find_by(name: "Personal Growth")
 )
+
 
 puts "Creating user_topics..."
 topics_with_2_participants = []
