@@ -298,79 +298,31 @@ topic11 = Topic.create!(
   theme: Theme.find_by(name: "Dancing")
 )
 
-topic4 = Topic.create!(
+topic12= Topic.create!(
   name: "Le Wagons is the best coding bootcamp in France",
   description: "Can we become a developer in 9 weeks?",
   user: User.find_by(email: "user4@example.com"),
   theme: Theme.find_by(name: "Coding")
 )
-topic5 = Topic.create!(
-  name: "Amazing Talker is best app to learn a new language",
-  description: "Amazing Talker is by far the best to learn german.",
-  user: User.find_by(email: "user5@example.com"),
-  theme: Theme.find_by(name: "Tech")
-)
-
-topic6 = Topic.create!(
-  name: "USA will win the world cup",
-  description: "USA has no competition.",
-  user: User.find_by(email: "user6@example.com"),
-  theme: Theme.find_by(name: "Basketball")
-)
-
-topic7 = Topic.create!(
-  name: "Fashion is the best industry to work in",
-  description: "Fashion becomes more and more important in our society.",
-  user: User.find_by(email: "user7@example.com"),
-  theme: Theme.find_by(name: "Fashion")
-)
-
-topic8 = Topic.create!(
-  name: "Health is our most important asset",
-  description: "It is challenging to stay healthy living in Paris.",
-  user: User.find_by(email: "user8@example.com"),
-  theme: Theme.find_by(name: "Health")
-)
-
-topic9 = Topic.create!(
-  name: "How to become a millionaire",
-  description: "the best way to become a millionaire is to invest in the stock market.",
-  user: User.find_by(email: "user8@example.com"),
-  theme: Theme.find_by(name: "Finance")
-)
-
-topic10 = Topic.create!(
-  name: "PEPPE Pizza is the best pizza in Paris",
-  description: "Even better than in Napoli.",
-  user: User.find_by(email: "user9@example.com"),
-  theme: Theme.find_by(name: "Food")
-)
-
-topic11 = Topic.create!(
-  name: "Pachanga is the best salsa club in Paris",
-  description: "Cuba Libre!",
-  user: User.find_by(email: "user10@example.com"),
-  theme: Theme.find_by(name: "Dancing")
-)
 
 # topics proposal ali starting here :
 
 topic12 = Topic.create!(
-  name: "If animals could talk, which would be the rudest?"
-  description:"Anamals can be incredibly rude, but which one is the rudest of them all?",
+  name: "If animals could talk, which would be the rudest?",
+  description: "Anamals can be incredibly rude, but which one is the rudest of them all?",
   user: User.find_by(email: "user11@example.com"),
   theme: Theme.find_by(name: "Nature")
 )
 
 topic13 = Topic.create!(
-  name: "Is cereal soup?"
+  name: "Is cereal soup?",
   description: "Can we consider cereal as a soup? can it be eaten hot or cold? Imagine a world where cereal is soup, what would it be like?",
   user: User.find_by(email: "user12@example.com"),
   theme: Theme.find_by(name: "Food")
 )
 
 topic14 = Topic.create!(
-  name: "How many chickens would it take to kill an elephant?"
+  name: "How many chickens would it take to kill an elephant?",
   description: "Chickens are small, but they can be deadly. How many chickens would it take to kill an elephant?",
   user: User.find_by(email: "user13@example.com"),
   theme: Theme.find_by(name: "Life")
@@ -384,256 +336,216 @@ topic15 = Topic.create!(
 )
 
 topic16 = Topic.create!(
-  name: "What is the sexiest and least sexy name?"
+  name: "What is the sexiest and least sexy name?",
   description: "For you what is the sexiest and least sexy name for a person ? Feel free to explain why. Are there names that are sexy in one language but not in another?",
   user: User.find_by(email: "user15@example.com"),
   theme: Theme.find_by(name: "Personal Growth")
 )
 
 topic17 = Topic.create!(
-  name: "What secret conspiracy would you like to start?"
+  name: "What secret conspiracy would you like to start?",
   description: "If you could start a secret conspiracy, what would it be about? What would be the goal of your conspiracy?",
   user: User.find_by(email: "user16@example.com"),
   theme: Theme.find_by(name: "Politics")
 )
 
 topic18 = Topic.create!(
-  name: "What’s invisible but you wish people could see?"
+  name: "What’s invisible but you wish people could see?",
   description: "If you could make something invisible visible, what would it be? Why?",
   user: User.find_by(email: "user17@example.com"),
   theme: Theme.find_by(name: "Personal Growth")
 )
 
 topic19 = Topic.create!(
-  name: "What’s the weirdest smell you have ever smelled?"
+  name: "What’s the weirdest smell you have ever smelled?",
   description: "What did it smell like? Where did you smell it? Why was it weird? Give examples.",
   user: User.find_by(email: "user18@example.com"),
   theme: Theme.find_by(name: "Life")
 )
 
 topic20 = Topic.create!(
-  name: "What’s the best Wi-Fi name you’ve seen?"
+  name: "What’s the best Wi-Fi name you’ve seen?",
   description: "What was the name? Where did you see it? Why was it the best? Give creative examples.",
   user: User.find_by(email: "user19@example.com"),
   theme: Theme.find_by(name: "Tech")
 )
 
 topic21 = Topic.create!(
-  name: "What’s the most ridiculous fact you know?"
+  name: "What’s the most ridiculous fact you know?",
   description: "Why is it ridiculous? Where did you learn it? Do you know other ridiculous facts?",
   user: User.find_by(email: "user20@example.com"),
   theme: Theme.find_by(name: "Life")
 )
 
 topic22 = Topic.create!(
-  name: "Is a hotdog a sandwich? Why or why not?"
+  name: "Is a hotdog a sandwich? Why or why not?",
   description: "Is a hotdog a sandwich? Why or why not? What is the definition of a sandwich?",
   user: User.find_by(email: "user21@example.com"),
   theme: Theme.find_by(name: "Food")
 )
 
 topic23 = Topic.create!(
-  name: "What is something that everyone looks stupid doing?"
+  name: "What is something that everyone looks stupid doing?",
   description: "Why do they look stupid doing it? Have you ever done it? Give examples.",
   user: User.find_by(email: "user22@example.com"),
   theme: Theme.find_by(name: "Life")
 )
 
 topic24 = Topic.create!(
-  name: "What is the funniest joke you know by heart?"
+  name: "What is the funniest joke you know by heart?",
   description: "What is the joke? Why is it funny? Where did you learn it? Give examples.",
   user: User.find_by(email: "user23@example.com"),
   theme: Theme.find_by(name: "Entertainment")
 )
 
 topic25 = Topic.create!(
-  name: "In 40 years, what will people be nostalgic for?"
+  name: "In 40 years, what will people be nostalgic for?",
   description: "Why will they be nostalgic for it? What will they miss about it? list yours.",
   user: User.find_by(email: "user24@example.com"),
   theme: Theme.find_by(name: "Life")
 )
 
 topic26 = Topic.create!(
-  name: "What are the unwritten rules of where you work?"
+  name: "What are the unwritten rules of where you work?",
   description: "What are the unwritten rules of your school? What are the unwritten rules of your family? What are the unwritten rules of your friend group?",
   user: User.find_by(email: "user25@example.com"),
   theme: Theme.find_by(name: "Business")
 )
 
 topic27 = Topic.create!(
-  name: "How do you feel about putting pineapple on pizza?"
+  name: "How do you feel about putting pineapple on pizza?",
   description: "Do you like pineapple on pizza? Why or why not? What other toppings do you like on pizza?",
   user: User.find_by(email: "user26@example.com"),
   theme: Theme.find_by(name: "Food")
 )
 
 topic28 = Topic.create!(
-  name: "What part of a kid’s movie completely scarred you?"
+  name: "What part of a kid’s movie completely scarred you?",
   description: "What movie was it? How old were you when you saw it? Why did it scar you?",
   user: User.find_by(email: "user27@example.com"),
   theme: Theme.find_by(name: "Movies")
 )
 
 topic29 = Topic.create!(
-  name: "What kind of cult would you like to start?"
+  name: "What kind of cult would you like to start?",
   description: "What would be the goal of your cult? What would be the rules of your cult? What would you call your cult?",
   user: User.find_by(email: "user28@example.com"),
   theme: Theme.find_by(name: "Religion")
 )
 
 topic30 = Topic.create!(
-  name: "Toilet paper, over or under?"
+  name: "Toilet paper, over or under?",
   description: "Why? What is the best way to put toilet paper on the roll? Do you have other ideas for the best way to put toilet paper on the roll?",
   user: User.find_by(email: "user29@example.com"),
   theme: Theme.find_by(name: "Life")
 )
 
 topic31 = Topic.create!(
-  name: "Where is the strangest place you’ve urinated or defecated?"
+  name: "Where is the strangest place you’ve urinated or defecated?",
   description: "Why did you do it there? What happened? How did you feel? Was it an emergency?",
   user: User.find_by(email: "user30@example.com"),
   theme: Theme.find_by(name: "Life")
 )
 
 topic32 = Topic.create!(
-  name: "What’s the best inside joke you’ve been a part of?"
+  name: "What’s the best inside joke you’ve been a part of?",
   description: "What was the joke? Who was a part of it? Why was it funny? If you could explain the joke to someone, how would you explain it?",
   user: User.find_by(email: "user31@example.com"),
   theme: Theme.find_by(name: "Life")
 )
 
 topic33 = Topic.create!(
-  name: "In one sentence, how would you sum up the internet?"
+  name: "In one sentence, how would you sum up the internet?",
   description: "What is the internet? Feel free to be creative and honest about your feelings and experiences with the internet.",
   user: User.find_by(email: "user32@example.com"),
   theme: Theme.find_by(name: "Tech")
 )
 
 topic34 = Topic.create!(
-  name: "What is the most embarrassing thing about kim karadashian?"
+  name: "What is the most embarrassing thing about kim karadashian?",
   description: "Why is it embarrassing? What is the most embarrassing thing about you? What is the most embarrassing thing about your best friend?",
   user: User.find_by(email: "user33@example.com"),
   theme: Theme.find_by(name: "Celebrities")
 )
 
 topic35 = Topic.create!(
-  name: "Which body part do you wish you could detach and why?"
+  name: "Which body part do you wish you could detach and why?",
   description: "What would you do with it? What would you do without it? Why would you detach it?",
   user: User.find_by(email: "user34@example.com"),
   theme: Theme.find_by(name: "Health")
 )
 
 topic36 = Topic.create!(
-  name: "What used to be considered trashy but now is very classy?"
+  name: "What used to be considered trashy but now is very classy?",
   description: "Why was it considered trashy? Why is it now considered classy? What other things are considered trashy but are actually classy?",
   user: User.find_by(email: "user35@example.com"),
   theme: Theme.find_by(name: "Fashion")
 )
 
 topic37 = Topic.create!(
-  name: "What’s the weirdest song lyric you’ve ever heard?"
+  name: "What’s the weirdest song lyric you’ve ever heard?",
   description: "What song was it? What was the lyric? Why was it weird? What other weird song lyrics do you know?",
   user: User.find_by(email: "user36@example.com"),
   theme: Theme.find_by(name: "Music")
 )
 
 topic38 = Topic.create!(
-  name: "What’s the weirdest thing an influencer has done at his or her wedding?"
+  name: "What’s the weirdest thing an influencer has done at his or her wedding?",
   description: "What did they do? Why was it weird? What other weird things have influencers done?",
   user: User.find_by(email: "user37@example.com"),
   theme: Theme.find_by(name: "Influencers")
 )
 
 topic39 = Topic.create!(
-  name: "What mythical creature would improve the world most if it existed?"
+  name: "What mythical creature would improve the world most if it existed?",
   description: "What would it do? How would it improve the world? Why would it improve the world? Did it exit in religious texts?",
   user: User.find_by(email: "user38@example.com"),
   theme: Theme.find_by(name: "Religion")
 )
 
 
+puts "Creating user_topics..."
+topics_with_2_participants = []
+Topic.all.each do |topic|
+  next if rand(1..3) > 2
 
-
-
-
-
-
-
-
-
-
-
-
-puts "Creating user topics..."
-user_topic1 = UserTopic.create!(user: User.first, topic: Topic.first, status: true)
-user_topic2 = UserTopic.create!(user: User.second, topic: Topic.second, status: true)
-user_topic3 = UserTopic.create!(user: User.third, topic: Topic.third, status: true)
-user_topic4 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
-user_topic5 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
-user_topic6 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
-user_topic7 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
-user_topic8 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
-user_topic9 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
-user_topic10 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
-user_topic11 = UserTopic.create!(user: User.all.sample, topic: Topic.all.sample, status: true)
-
+  participant = User.where.not(id: topic.user.id).sample
+  topic.users << participant
+  topics_with_2_participants << topic
+end
+puts "There are #{topics_with_2_participants.count} topics with 2 participants."
 
 puts "Creating messages..."
-message1 = Message.create(content: "Exciting developments in AI recently!", user_topic: user_topic1, topic: topic1)
-message2 = Message.create(content: "I agree! I'm excited to see what the future holds.", user_topic: user_topic2, topic: topic2)
-message3 = Message.create(content: "Have you heard about the latest Mars mission?", user_topic: user_topic3, topic: topic3)
+topics_with_2_participants.each do |topic|
+  rand(5..20).times do
+    Message.create!(content: Faker::Lorem.paragraph(sentence_count: 2), user_topic: topic.user_topics.sample, topic: topic)
+  end
+end
 
 puts "Creating reviews..."
+review_contents = [
+  "Great contributor!",
+  "Insightful discussions.",
+  "Very knowledgeable about the topic.",
+  "Great to talk to.",
+  "Very interesting.",
+]
 
-interesting = rand(1..5)
-fun = rand(1..5)
-nice = rand(1..5)
-global_rating = [interesting, fun, nice].sum / 3
-
-review1 = Review.create(
-  content: "Great contributor!",
-  rating: 5,
-  red_flag: false,
-  reviewer_user_topic: UserTopic.first,
-  reviewee_user_topic: UserTopic.second,
-  global_rating: 4,
-  interesting: 5,
-  fun: 4,
-  nice: 5
-)
-
-interesting = rand(1..5)
-fun = rand(1..5)
-nice = rand(1..5)
-global_rating = [interesting, fun, nice].sum / 3
-
-review2 = Review.create(
-  content: "Insightful discussions.",
-  rating: 4,
-  red_flag: false,
-  reviewer_user_topic: UserTopic.second,
-  reviewee_user_topic: UserTopic.first,
-  global_rating: 4,
-  interesting: 4,
-  fun: 3,
-  nice: 4
-)
-
-interesting = rand(1..5)
-fun = rand(1..5)
-nice = rand(1..5)
-global_rating = [interesting, fun, nice].sum / 3
-
-review3 = Review.create(
-  content: "Very knowledgeable about the topic.",
-  rating: 5,
-  red_flag: false,
-  reviewer_user_topic: UserTopic.third,
-  reviewee_user_topic: UserTopic.first,
-  global_rating: 5,
-  interesting: 5,
-  fun: 5,
-  nice: 4
-)
+topics_with_2_participants.each do |topic|
+  topic.user_topics.each do |user_topic|
+    other_user_topic = topic.user_topics.where.not(id: user_topic.id).first
+    Review.create!(
+      content: review_contents.sample,
+      rating: 5,
+      red_flag: false,
+      reviewer_user_topic: user_topic,
+      reviewee_user_topic: other_user_topic,
+      interesting: intersting_grade = rand(2..5),
+      fun: fun_grade = rand(2..5),
+      nice: nice_grade = rand(2..5),
+      global_rating: [intersting_grade, fun_grade, nice_grade].sum / 3
+    )
+  end
+end
 
 puts "Finished seeding."

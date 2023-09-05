@@ -25,6 +25,6 @@ class Topic < ApplicationRecord
   private
 
   def create_user_topic_for_owner
-    UserTopic.create(user: self.user, topic: self)
+    UserTopic.create(user: self.user, topic: self, status: true)
   end
 end
