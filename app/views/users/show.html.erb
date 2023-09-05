@@ -61,6 +61,7 @@
       <div class="profile-review-card__author">
         <%= render "shared/avatar_with_badge", user: review.reviewer, size: :small %>
         <div class="profile-review-card__author__username"><%= review.reviewer.username.capitalize %></div>
+
       </div>
       <div class="profile-review-card__content">
         <p><%= review.topic.name %></p>
