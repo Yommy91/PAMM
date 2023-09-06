@@ -14,3 +14,14 @@
 .modal-color{
   color: #FFBB5C;
 }
+
+.modal-content {
+  position: relative;
+}
+
+.btn-close {
+  position: absolute;
+  top: 16px; /* Ajustez cette valeur pour l'espacement vertical */
+  right: 32px; /* Ajustez cette valeur pour l'espacement horizontal */
+  z-index: 1000;
+}

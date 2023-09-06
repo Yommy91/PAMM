@@ -3,6 +3,7 @@
     <%= render "topics/card", topic: @topic %>
   </div>
   <%= render "topics/chatroom" %>
+  <%= render partial: 'topics/modal', locals: { topic: @topic } %>
   <div class="d-flex px-4">
     <%= link_to "Review", new_user_topic_review_path(@reviewee_user_topic), class: "flex-grow-1 btn btn-outline-light rounded-4" %>
     <% if @current_user_topic.status == true %>
