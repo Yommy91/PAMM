@@ -7,3 +7,13 @@
     color: white !important;
   }
 }
+
+.gl-star-rating{
+  display: flex;
+  justify-content: center;
+}
+.review_red_flag .form-check{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

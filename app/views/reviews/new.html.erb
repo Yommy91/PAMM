@@ -4,14 +4,14 @@
       <h4 class="mb-4 mt-4">
         Leave a Review about your tchat with <%= @reviewee_user.username.capitalize %>
       </h4>
-      <%= simple_form_for [@reviewee_user_topic, @review] do |f| %>
-        <%= f.input :content, label: false, placeholder: "What did you think of this topic?", input_html: { rows: 4 } %>
-        <%= f.input :rating, collection: (1..5), required: :false, label: false, prompt: "How would you rate this topic?", input_html: { data: { controller: "star-rating" } } %>
-        <%= f.input :red_flag, input_html: { data: { controller: "star-rating" } }, label_html: { class: 'text-white' } %>
-        <%= f.input :interesting, collection: (1..5), label: false, prompt: "How would you rate the quality of #{@reviewee_user.username.capitalize}'s content?", input_html: { data: { controller: "star-rating" } } %>
-        <%= f.input :fun, collection: (1..5), label: false, prompt: "How would you rate the #{@reviewee_user.username.capitalize}'s expertise on this topic?", input_html: { data: { controller: "star-rating" } } %>
-        <%= f.input :nice, collection: (1..5), label: false, prompt: "How would you rate the #{@reviewee_user.username.capitalize}'s behavior?", input_html: { data: { controller: "star-rating" } } %>
-        <%= f.button :submit, "Submit Review", class: "btn btn-secondary rounded-2" %>
+      <%= simple_form_for [@reviewee_user_topic, @review], html:{class: "mt-5"} do |f| %>
+        <%= f.input :content, as: :text, label: false, placeholder: "What did you think of this topic?", input_html: { rows: 4 }, wrapper_html: {class: "mb-4"} %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}}, wrapper_html: {class: "mb-4"} %>
+        <%= f.input :interesting, collection: (1..5), label: "Interest Level", input_html: { data: { controller: "star-rating" } }, wrapper_html: {class: "mb-4"} %>
+        <%= f.input :fun, collection: (1..5), label: "Fun Factor (1 - not fun, 5 - super fun)", input_html: { data: { controller: "star-rating" } }, wrapper_html: {class: "mb-4"} %>
+        <%= f.input :nice, collection: (1..5), label: "Nice Level (1 - Not Nice, 5 - Very Nice)", input_html: { data: { controller: "star-rating" } }, wrapper_html: {class: "mb-4"} %>
+        <%= f.input :red_flag, input_html: { data: { controller: "star-rating" } }, label_html: { class: 'text-white' }, wrapper_html: {class: "mb-4"}%>
+        <%= f.button :submit, "Submit Review", class: "styled-button shadow-lg border border-light rounded-4" %>
       <% end %>
     </div>
   </div>
