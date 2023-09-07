@@ -10,9 +10,13 @@
       </div>
       <div class="modal-footer">
         <%= link_to  "Back", topics_path, class: "btn btn-outline-light rounded-5" %>
-        <%= link_to topic_user_topics_path(topic), data: { turbo_method: :post }, class: "btn styled-button" do %>
-          <i class="fa-regular fa-comments">  JOIN</i>
+        
+        <% unless current_user.in?(topic.users) %>
+          <%= link_to topic_user_topics_path(topic), data: { turbo_method: :post }, class: "btn styled-button" do %>
+            <i class="fa-regular fa-comments">  JOIN</i>
+          <% end %>
         <% end %>
+        
       </div>
     </div>
   </div>

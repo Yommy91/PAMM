@@ -1,7 +1,4 @@
-<div class="chat-container"
-  data-controller="topic-subscription"
-  data-topic-subscription-topic-id-value="<%= @topic.id %>"
-  data-topic-subscription-current-user-id-value="<%= current_user.id %>">
+<div class="chat-container">
 
   <div class="chat-messages" data-topic-subscription-target="messages">
     <% @topic.messages.each do |message| %>
@@ -15,7 +12,8 @@
   <div>
   <% if @current_user_topic.status == true %>
     <%= simple_form_for [@topic, @message],
-      html: { data: { action: "turbo:submit-end->topic-subscription#resetForm" }, class: "d-flex" } do |f| %>
+      html: { data: { action: "turbo:submit-end->topic-subscription#resetForm" }, class: "d-flex gap-1 mb-2" } do |f|
+    %>
       <%= f.input :content,
         label: false,
         placeholder: "Type your message here",

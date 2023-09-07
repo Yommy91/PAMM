@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   end
   get :chatrooms, to: "topics#chatrooms"
   resources :topics, only: [:index,:show, :new, :create] do
+    member do
+      post :send_ia_generated_message
+    end
     resources :messages, only: [:create]
     resources :user_topics, only: [:create]
   end
