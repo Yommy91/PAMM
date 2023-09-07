@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://plus.unsplash.com/premium_photo-1683134259190-8c08eb55124b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);">
   <div class="container">
-    <h1><strong>PAMM</strong></h1>
-    <p class="mt-4">Talk freely about subjects that matters for you.</p>
+    <%= image_tag "Logo/logo1.png", class: 'logo-pamm', alt: "PAMM"  %>
+    <p class="mt-4">Talk freely about subjects that matters to you.</p>
     <div class="mt-5">
     <% if user_signed_in? %>
       <%= link_to "Browse topics", topics_path, class: 'styled-button' %>
@@ -25,17 +25,6 @@
         <img src="" alt="">
         <i class="fa fa-comments fa-2x" aria-hidden="true"></i>
         <p class="mt-4"><strong>Thematically</strong> driven conversations based on common interests.</p>
-      </div>
-        <div class="card">
-        <img src="" alt="">
-        <i class="fas fa-phone-alt fa-2x"></i>
-        <p class="mt-4">Discuss <strong>Topics</strong> that really matter for you, without restraints thanks to our voice changer.</p>
-      <% unless user_signed_in? %>
-        <div class="mt-5">
-          <%= link_to 'Sign up', new_user_registration_path, class: 'styled-button' %>
-          <%= link_to 'Login', new_user_session_path, class: 'styled-button' %>
-        </div>
-      <% end %>
       </div>
     </div>
 
