@@ -7,4 +7,9 @@ class Message < ApplicationRecord
   def sender?(a_user)
     user.id == a_user.id
   end
+
+  def message_for_ia_prompt
+    users = topic.users.map.with_index { |user, index| [user.id, index + 1] }.to_h
+    "user #{users[self.user.id]}: #{content}"
+  end
 end

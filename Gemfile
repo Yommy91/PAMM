@@ -84,3 +84,4 @@ end
 
 
 gem 'faker'
+gem "ruby-openai"
