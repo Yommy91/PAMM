@@ -42,9 +42,9 @@
   color: #f5ebeb;
   cursor: pointer;
   border: 1px solid;
-  margin-top: 4px;
   padding-right: 9px;
-  margin-bottom: 2px;
+  display: flex;
+  justify-items: center;
 }
 
 .message_content {
