@@ -39,6 +39,24 @@ class TopicsController < ApplicationController
     @message = Message.new
   end
 
+  def send_ia_generated_message
+    @topic = Topic.find(params[:id])
+    message_content = AskIaForAnswer.new(@topic).call
+    @message = Message.new(content: message_content)
+    @user_topic = @topic.user_topics.find_by(user: current_user)
+    @message.user_topic = @user_topic
+    @message.topic = @topic
+
+    if @message.save
+      TopicChatroomChannel.broadcast_to(
+        @topic,
+        message: render_to_string(partial: "messages/message", locals: { message: @message }),
+        sender_id: @message.user.id
+      )
+    end
+    head :ok
+  end
+
   def destroy
 
   end

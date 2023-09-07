@@ -1,10 +1,19 @@
-<div class="container" id="topics-show">
+<div class="container" 
+  id="topics-show"
+  data-controller="topic-subscription"
+  data-topic-subscription-topic-id-value="<%= @topic.id %>"
+  data-topic-subscription-pamm-value="<%= false %>"
+  data-topic-subscription-send-pamm-message-path-value="<%= send_ia_generated_message_topic_path(@topic) %>"
+  data-topic-subscription-current-user-id-value="<%= current_user.id %>">
   <div class="mt-3">
     <%= render "topics/card", topic: @topic %>
   </div>
   <%= render "topics/chatroom" %>
   <%= render partial: 'topics/modal', locals: { topic: @topic } %>
   <div class="d-flex px-2 gap-2">
+    <%= link_to "✋", '#', 
+      class: "flex-grow-0 btn btn-outline-light rounded-4",
+      data: { action: "click->topic-subscription#togglePamm"} %>
     <%= link_to "Review", new_user_topic_review_path(@reviewee_user_topic), class: "flex-grow-1 btn btn-outline-light rounded-4" %>
     <% if @current_user_topic.status == true %>
       <%= link_to "Leave", user_topic_path(@current_user_topic), data: { turbo_method: :patch }, class: "flex-grow-1 btn btn-light rounded-4" %>

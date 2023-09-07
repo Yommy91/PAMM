@@ -1,7 +1,4 @@
-<div class="chat-container"
-  data-controller="topic-subscription"
-  data-topic-subscription-topic-id-value="<%= @topic.id %>"
-  data-topic-subscription-current-user-id-value="<%= current_user.id %>">
+<div class="chat-container">
 
   <div class="chat-messages" data-topic-subscription-target="messages">
     <% @topic.messages.each do |message| %>
