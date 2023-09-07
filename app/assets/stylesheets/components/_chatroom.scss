@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0.3rem;
   border-radius: 10px;
 }
 
@@ -32,22 +32,17 @@
 }
 
 #message_content {
-  background: #000000;
-  padding: 15px;
+  padding: 0.5rem 0.8rem;
   border-radius: 10px;
-  margin: 0.2rem;
 }
 
 .button-send {
-  padding: 15px;
-  margin-left: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #000000;
   color: rgb(245, 235, 235);
   cursor: pointer;
   border: solid;
-  height: 57px;
 }
 
 .message_content {
