@@ -1,8 +1,8 @@
 <div class="card-topic">
   <div class="card-topic-info">
     <div class="card-topic-info-name">
-      <div class="bg-success rounded-5 d-inline-block px-3 pt-1 mb-3"><%= topic.theme.name %></div>
-      <p><%= topic.name %>
+      <div class="title d-inline-block mb-3"><%= topic.theme.name %></div>
+      <p><strong><%= topic.name %></strong>
         <% if current_page?(action: "chatrooms") %>
           <i class="ms-2 fa-solid fa-circle-info d-none" data-bs-toggle="modal" data-bs-target="#modal<%= topic.id %>"></i>
         <% else %>
