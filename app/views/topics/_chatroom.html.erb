@@ -16,13 +16,11 @@
     %>
       <%= f.input :content,
         label: false,
-        placeholder: "Message ##{@topic.name}",
+        placeholder: "Type your message here",
         wrapper_html: {class: "flex-grow-1 mb-0"},
-        input_html: {class: "input-send"},
-        autocomplete: false
-      %>
+        input_html: {class: "input-send", autocomplete: "off"} %>
       <%= button_tag class: 'button-send' do %>
-        <i class="fa-regular fa-paper-plane"></i>
+        <i class="fa-regular fa-paper-plane fa-2xl"></i>
       <% end %>
     <% end %>
   <% end %>
