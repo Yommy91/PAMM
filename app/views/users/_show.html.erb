@@ -13,7 +13,7 @@
     <div class="d-flex">
       <h1><%= user.username.capitalize %></h1>
     </div>
-    <p><%= user.description || 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, pariatur? Sapiente nesciunt vel nostrum id quisquam molestiae odio' %></p>
+    <p><%= user.description || 'Here for both laughs and deep discussions. Let's chat about life's absurdities and its profound mysteries. 🤪🤔' %></p>
     <% if user == current_user %>
       <%= link_to 'Sign out', destroy_user_session_path, class: 'styled-button mt-3 d-inline-block fw-bold', data: {turbo_method: :delete} %>
     <% end %>
