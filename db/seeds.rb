@@ -741,9 +741,9 @@ user1.user_topics.each do |user_topic|
     red_flag: false,
     reviewer_user_topic: other_user_topic,
     reviewee_user_topic: user_topic,
-    interesting: intersting_grade = rand(3..5),
-    fun: fun_grade = rand(3..5),
-    nice: nice_grade = rand(3..5),
+    interesting: intersting_grade = rand(4..5),
+    fun: fun_grade = rand(4..5),
+    nice: nice_grade = rand(4..5),
     global_rating: [intersting_grade, fun_grade, nice_grade].sum / 3
   )
 end
