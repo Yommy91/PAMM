@@ -4,7 +4,7 @@ import { createConsumer } from "@rails/actioncable"
 export default class extends Controller {
   static values = { topicId: Number }
   static targets = ["messages"]
-  static values = { 
+  static values = {
     topicId: Number,
     currentUserId: Number,
     pamm: Boolean,
@@ -31,9 +31,9 @@ export default class extends Controller {
     const messageElement = this.#buildMessageElement(currentUserIsSender, data.message)
     this.messagesTarget.insertAdjacentHTML("beforeend", messageElement)
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
-    
+
     if (this.pammValue && !currentUserIsSender) {
-      this.#triggerIaGenerateMessageSending();
+      setTimeout(() => this.#triggerIaGenerateMessageSending(), 3000)
     }
   }
 
