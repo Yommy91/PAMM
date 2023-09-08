@@ -54,13 +54,11 @@ theme101 = Theme.create(name: "Startups")
 theme102 = Theme.create(name: "Coding")
 
 puts "Creating users..."
-user1 = User.create(email: "user1@example.com", password: "password", username: "bob", avatar: "avatar-1.png")
-#avatar_image = File.join(Rails.root, 'app', 'assets', 'images', 'avatar-1.png')
-#user1.avatar.attach(io: File.open(avatar_image), filename: "#{user1.username}.png", content_type: "image/png")
-Theme.all.shuffle.first(5).each do |theme|
+user1 = User.create(email: "user1@example.com", password: "password", username: "Otis")
+Theme.where(name: ["Careers", "Coding", "Personal Growth","Health", "Religion"]).each do |theme|
   User.last.user_themes.create(theme: theme)
-
 end
+
 user2 = User.create(email: "user2@example.com", password: "password", username: "john")
 Theme.all.shuffle.first(5).each do |theme|
   User.last.user_themes.create(theme: theme)
@@ -601,10 +599,23 @@ topic54 = Topic.create!(
   theme: Theme.find_by(name: "Personal Growth")
 )
 
+topic55 = Topic.create!(
+  name: "Rails, Django, React, Symphony: which one is the best framework to create web apps?",
+  description: "There's plenty of opportunities after finishing Le Wagon, what should we choose to do learn next ? ?",
+  user: User.find_by(email: "user1@example.com"),
+  theme: Theme.find_by(name: "Careers")
+)
+
+topics_for_otis = [topic20, topic39, topic35]
+topics_for_otis.each do |topic|
+  topic.users << user1
+end
+
+
 
 puts "Creating user_topics..."
 topics_with_2_participants = []
-Topic.all.each do |topic|
+Topic.where.not(id: topics_for_otis.push(topic55).map(&:id)).each do |topic|
   next if rand(1..3) > 2
 
   participant = User.where.not(id: topic.user.id).sample
@@ -613,12 +624,12 @@ Topic.all.each do |topic|
 end
 puts "There are #{topics_with_2_participants.count} topics with 2 participants."
 
-puts "Creating messages..."
-topics_with_2_participants.each do |topic|
-  rand(5..20).times do
-    Message.create!(content: Faker::Lorem.paragraph(sentence_count: 2), user_topic: topic.user_topics.sample, topic: topic)
-  end
-end
+# puts "Creating messages..."
+# topics_with_2_participants.each do |topic|
+#   rand(5..20).times do
+#     Message.create!(content: Faker::Lorem.paragraph(sentence_count: 2), user_topic: topic.user_topics.sample, topic: topic)
+#   end
+# end
 
 puts "Creating reviews..."
 review_contents = [
@@ -719,6 +730,23 @@ review_contents = [
   "I highly recommend you. You are a great listener.",
   "Time flies when you are having fun. I enjoyed this conversation."
 ]
+
+user1.user_topics.each do |user_topic|
+  other_user_topic = user_topic.topic.user_topics.where.not(id: user_topic.id).first
+  next unless other_user_topic
+
+  Review.create!(
+    content: review_contents.sample,
+    rating: 5,
+    red_flag: false,
+    reviewer_user_topic: other_user_topic,
+    reviewee_user_topic: user_topic,
+    interesting: intersting_grade = rand(3..5),
+    fun: fun_grade = rand(3..5),
+    nice: nice_grade = rand(3..5),
+    global_rating: [intersting_grade, fun_grade, nice_grade].sum / 3
+  )
+end
 
 topics_with_2_participants.each do |topic|
   topic.user_topics.each do |user_topic|
