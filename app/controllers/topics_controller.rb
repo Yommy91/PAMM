@@ -1,12 +1,13 @@
 class TopicsController < ApplicationController
   def index
+    @topic = Topic.where.not(user: current_user)
     @topics = if params[:query].present?
-                Topic.search(params[:query])
+                @topic.search(params[:query])
               else
-                Topic.all
+                @topic.all
               end
     @topics = @topics.select { |topic| topic.user_topics.count == 1 }
-    @topics = Topic.where(id: @topics.map(&:id))
+    @topics = Topic.where(id: @topics.map(&:id)).order(created_at: :desc)
 
     @user_themes_topics = @topics.joins(:theme).where(themes: { id: current_user.themes.pluck(:id) })
     @other_themes_topics = @topics.where.not(id: @user_themes_topics.pluck(:id))
@@ -26,7 +27,7 @@ class TopicsController < ApplicationController
     @topic.user = current_user
 
     if @topic.save
-      redirect_to topic_path(@topic)
+      redirect_to topics_path
     else
       render :new, status: :unprocessable_entity
     end

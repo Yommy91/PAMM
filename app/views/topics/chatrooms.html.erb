@@ -17,7 +17,7 @@
     <% if @topics.present? %>
       <% @topics.each do |topic| %>
         <div class="mb-3 chatroom-topic-container">
-          <%= link_to "", topic_path(topic) %>
+          <%= link_to "", topic_path(topic) if topic.users.count > 1 %>
           <div class="head-card">
             <small><em class="text-muted"><%= distance_of_time_in_words_to_now(topic.created_at) %> ago</em></small>
             <small><em class="text-muted"><%= topic.messages.count %> messages</em></small>
